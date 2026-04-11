@@ -5,4 +5,4 @@
 
 | Topic | Page | Sources |
 |-------|------|---------|
-| LLM-Powered Knowledge Management | [Knowledge_Management-LLM_Powered_Knowledge_Management.md](Knowledge_Management-LLM_Powered_Knowledge_Management.md) | 1 |
+| LLM-Powered Knowledge Management | [Knowledge_Management-LLM_Powered_Knowledge_Management.md](Knowledge%20Management%20-%20LLM%20Powered%20Knowledge%20Management.md) | 1 |

@@ -12,7 +12,7 @@ You are performing a health check on the knowledge base.
 
 1. **Scan raw sources.** Find any with `status: pending` — these haven't been distilled yet.
 
-2. **Check naming convention.** Verify all files follow `<Field>-<Title_With_Underscores>.md` and indexes follow `_<type>-index.md`.
+2. **Check naming convention.** Verify files follow the conventions defined in CLAUDE.md.
 
 3. **Scan wiki articles.** Read all articles across all knowledge types and check for:
    - **Broken links:** `[[links]]` pointing to non-existent pages

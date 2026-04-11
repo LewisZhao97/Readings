@@ -7,16 +7,16 @@
 
 | Entity | Page | Sources |
 |--------|------|---------|
-| Andrej Karpathy | [AI-Andrej_Karpathy.md](AI-Andrej_Karpathy.md) | 1 |
+| Andrej Karpathy | [AI-Andrej_Karpathy.md](AI%20-%20Andrej%20Karpathy.md) | 1 |
 
 ## Tools
 
 | Entity | Page | Sources |
 |--------|------|---------|
-| Obsidian | [Tools-Obsidian.md](Tools-Obsidian.md) | 1 |
+| Obsidian | [Tools-Obsidian.md](Tools%20-%20Obsidian.md) | 1 |
 
 ## Concepts
 
 | Entity | Page | Sources |
 |--------|------|---------|
-| Memex | [Knowledge_Management-Memex.md](Knowledge_Management-Memex.md) | 1 |
+| Memex | [Knowledge_Management-Memex.md](Knowledge%20Management%20-%20Memex.md) | 1 |

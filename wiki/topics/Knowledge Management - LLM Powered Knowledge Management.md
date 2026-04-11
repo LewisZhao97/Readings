@@ -1,5 +1,5 @@
 ---
-title: LLM-Powered Knowledge Management
+title: LLM - Powered Knowledge Management
 sources:
   - "[[Karpathy LLM Wiki]]"
 tags:
@@ -27,7 +27,7 @@ The key difference: the wiki is a persistent, compounding artifact. A single new
 
 ## Architecture Pattern
 
-Three layers identified by [[entities/AI-Andrej_Karpathy|Karpathy]]:
+Three layers identified by [[AI - Andrej Karpathy|Karpathy]]:
 
 1. **Raw sources** — immutable collection of original documents. Human curates what goes in. LLM never modifies.
 2. **Wiki** — LLM-generated knowledge artifacts. Multiple types serve different purposes:
@@ -71,11 +71,11 @@ LLMs eliminate the bookkeeping cost: updating cross-references, keeping summarie
 
 ## Historical Context
 
-The pattern is spiritually connected to [[entities/Knowledge_Management-Memex|Vannevar Bush's Memex]] (1945) — a vision of personal knowledge with associative trails. The missing piece was maintenance automation.
+The pattern is spiritually connected to [[Knowledge Management - Memex|Vannevar Bush's Memex]] (1945) — a vision of personal knowledge with associative trails. The missing piece was maintenance automation.
 
 ## Sources
 
-- [[summaries/LLM-Karpathy_LLM_Wiki|LLM Wiki — Karpathy]]
+- [[LLM - Karpathy LLM Wiki|LLM Wiki — Karpathy]]
 
 ## Core Idea
 
@@ -85,7 +85,7 @@ LLM Wiki approach: store documents → LLM reads and **integrates** into a persi
 
 ## Architecture Pattern
 
-Three layers identified by [[entities/AI-Andrej_Karpathy|Karpathy]]:
+Three layers identified by [[AI - Andrej Karpathy|Karpathy]]:
 
 1. **Raw sources** — immutable collection of original documents. Human curates what goes in. LLM never modifies.
 2. **Wiki** — LLM-generated knowledge artifacts. Multiple types serve different purposes:
@@ -113,8 +113,8 @@ LLMs eliminate the bookkeeping cost: updating cross-references, keeping summarie
 
 ## Historical Context
 
-The pattern is spiritually connected to [[entities/Knowledge_Management-Memex|Vannevar Bush's Memex]] (1945) — a vision of personal knowledge with associative trails. The missing piece was maintenance automation.
+The pattern is spiritually connected to [[Knowledge Management - Memex|Vannevar Bush's Memex]] (1945) — a vision of personal knowledge with associative trails. The missing piece was maintenance automation.
 
 ## Sources
 
-- [[summaries/LLM-Karpathy_LLM_Wiki|LLM Wiki — Karpathy]]
+- [[LLM - Karpathy LLM Wiki|LLM Wiki — Karpathy]]

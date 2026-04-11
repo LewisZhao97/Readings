@@ -21,7 +21,7 @@ You are answering a question using the knowledge base.
 
 3. **Read only the needed pages.** Do NOT load everything — read only the pages identified in step 2. Follow `[[links]]` to related pages only if the initial pages don't fully answer the question.
 
-4. **Synthesize.** Answer the question with citations. Use format: `(see [[wiki/<type>/<Field>-<Title>]])`.
+4. **Synthesize.** Answer the question with citations to wiki pages.
 
 5. **Optionally file back.** If the answer is a substantial synthesis, ask the user if they'd like to save it as a new wiki page.
 

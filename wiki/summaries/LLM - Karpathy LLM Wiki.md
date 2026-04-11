@@ -28,17 +28,17 @@ Andrej Karpathy proposes a pattern for building personal knowledge bases where a
 - **Three operations:** ingest (process new source → touch ~10-15 pages), query (answer from wiki, file good answers back), lint (health-check for contradictions, orphans, staleness)
 - **Two navigation files:** index (content catalog, delegation map) and log (chronological append-only record)
 - **Why it works:** humans abandon wikis because maintenance burden grows faster than value. LLMs eliminate maintenance cost — they don't get bored, don't forget cross-references, can touch 15 files in one pass.
-- **Historical connection:** related to Vannevar Bush's [[entities/Knowledge_Management-Memex|Memex]] (1945) — the missing piece was who does maintenance.
+- **Historical connection:** related to Vannevar Bush's [[Knowledge Management - Memex|Memex]] (1945) — the missing piece was who does maintenance.
 
 ## Entities Mentioned
 
-- [[entities/AI-Andrej_Karpathy|Andrej Karpathy]] — author
-- [[entities/Knowledge_Management-Memex|Memex]] — historical predecessor concept
+- [[AI - Andrej Karpathy|Andrej Karpathy]] — author
+- [[Knowledge Management - Memex|Memex]] — historical predecessor concept
 - RAG (Retrieval-Augmented Generation) — contrasted approach
 
 ## Related
 
-- [[topics/Knowledge_Management-LLM_Powered_Knowledge_Management|LLM-Powered Knowledge Management]]
+- [[Knowledge Management - LLM Powered Knowledge Management|LLM-Powered Knowledge Management]]
 
 ## Recommend Reason
 

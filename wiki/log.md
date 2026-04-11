@@ -27,3 +27,17 @@
 - **Wiki pages updated:** `wiki/entities/AI-Andrej_Karpathy.md`, `wiki/entities/Knowledge_Management-Memex.md`, `wiki/topics/Knowledge_Management-LLM_Powered_Knowledge_Management.md`
 - **Glossary terms added:** Obsidian
 - **distil_times:** 1 → 2
+
+## [2026-04-12] ingest | Attention Is All You Need — Vaswani et al.
+
+- **Source:** https://arxiv.org/html/1706.03762v7
+- **Raw:** `raw/articles/Attention Is All You Need.md`
+- **Summary:** `wiki/summaries/Deep_Learning-Attention_Is_All_You_Need.md`
+- **Recommend:** yes
+
+## [2026-04-12] ingest | Meta-Harness: End-to-End Optimization of Model Harnesses — Lee, Khattab et al.
+
+- **Source:** https://arxiv.org/html/2603.28052v1
+- **Raw:** `raw/articles/Meta-Harness End-to-End Optimization of Model Harnesses.md`
+- **Summary:** `wiki/summaries/LLM-Meta_Harness.md`
+- **Recommend:** yes

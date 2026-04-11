@@ -60,22 +60,27 @@ This keeps context usage minimal even with hundreds of articles.
 
 ## File Naming Convention
 
-### Article files
+### Raw source files
 
-All raw and wiki markdown files (except `log.md` and `glossary.md`) follow:
+Raw source files in `raw/` are named by the user manually. No enforced convention — the user drops files as-is.
+
+### Wiki files
+
+All wiki markdown files (summaries, entities, topics, comparisons, synthesis — but NOT index files, `log.md`, or `glossary.md`) follow:
 
 ```
-<Field>-<Title_With_Underscores>.md
+<Field> - <Full Name>.md
 ```
 
-- **Field** — the main topic/domain area, uppercase first letter (e.g., `LLM`, `AI`, `Knowledge_Management`)
-- **Title** — the article title, words separated by underscores, uppercase first letter of each word
-- Separated by a single hyphen
+- **Field** — the main topic/domain area (e.g., `LLM`, `AI`, `Deep Learning`, `Knowledge Management`)
+- **Full Name** — the article's full name, natural spacing
+- Separated by ` - ` (space-hyphen-space)
 
 Examples:
-- `LLM-Karpathy_LLM_Wiki.md`
-- `AI-Andrej_Karpathy.md`
-- `Knowledge_Management-Memex.md`
+- `LLM - Karpathy LLM Wiki.md`
+- `AI - Andrej Karpathy.md`
+- `Knowledge Management - Memex.md`
+- `Deep Learning - Attention Is All You Need.md`
 
 ### Index files
 
@@ -102,7 +107,7 @@ ingested: none | 2026-04-10 # none = not processed, date = when ingested
 ---
 ```
 
-The user manages raw files and their frontmatter. The LLM only updates `status` and `ingested` during ingest — never modifies body content.
+The user manages raw files and their frontmatter. The LLM updates `status`, `ingested`, and **refines `tags`** during ingest — never modifies body content. The user's initial tags may be approximate; the LLM should replace them with accurate, consistent tags after reading the source.
 
 ### Wiki summaries (`wiki/summaries/*.md`)
 

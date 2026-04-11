@@ -17,7 +17,7 @@ A markdown-based note-taking and knowledge management application with graph vie
 
 ## Role in LLM Wiki Pattern
 
-In [[entities/AI-Andrej_Karpathy|Karpathy's]] [[topics/Knowledge_Management-LLM_Powered_Knowledge_Management|LLM Wiki]] workflow, Obsidian serves as the browsing/reading interface while the LLM agent handles writing:
+In [[AI - Andrej Karpathy|Karpathy's]] [[Knowledge Management - LLM Powered Knowledge Management|LLM Wiki]] workflow, Obsidian serves as the browsing/reading interface while the LLM agent handles writing:
 
 - **Graph view** — best way to visualize wiki shape, see hubs and orphans
 - **Web Clipper** — browser extension that converts web articles to markdown for ingestion
@@ -27,4 +27,4 @@ In [[entities/AI-Andrej_Karpathy|Karpathy's]] [[topics/Knowledge_Management-LLM_
 
 ## Referenced In
 
-- [[summaries/LLM-Karpathy_LLM_Wiki|LLM Wiki — Karpathy]]
+- [[LLM - Karpathy LLM Wiki|LLM Wiki — Karpathy]]
