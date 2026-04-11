@@ -1,0 +1,21 @@
+{
+    "mcpServers": {
+        "github": {
+            "command": "cmd",
+            "args": [
+                "/c",
+                "npx",
+                "-y",
+                "@modelcontextprotocol/server-github@latest"
+            ]
+        },
+        "context7": {
+            "type": "http",
+            "url": "https://mcp.context7.com/mcp"
+        },
+        "exa": {
+            "type": "http",
+            "url": "https://mcp.exa.ai/mcp"
+        }
+    }
+}

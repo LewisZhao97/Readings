@@ -1,0 +1,22 @@
+# Entities
+
+> Pages about specific things: people, models, tools, companies, techniques.
+> Entity pages accumulate knowledge from ALL sources that mention them.
+
+## People
+
+| Entity | Page | Sources |
+|--------|------|---------|
+| Andrej Karpathy | [AI-Andrej_Karpathy.md](AI-Andrej_Karpathy.md) | 1 |
+
+## Tools
+
+| Entity | Page | Sources |
+|--------|------|---------|
+| Obsidian | [Tools-Obsidian.md](Tools-Obsidian.md) | 1 |
+
+## Concepts
+
+| Entity | Page | Sources |
+|--------|------|---------|
+| Memex | [Knowledge_Management-Memex.md](Knowledge_Management-Memex.md) | 1 |
