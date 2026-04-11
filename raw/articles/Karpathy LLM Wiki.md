@@ -1,8 +1,7 @@
 ---
 title: llm-wiki
 author: Andrej Karpathy
-sources:
-  - https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+source: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
 created: 2026-04-10
 tags:
   - LLM
