@@ -14,7 +14,7 @@ The user specifies which source to distil. If not specified, check `wiki/log.md`
 
 ## Steps
 
-1. **Read the raw source** and its existing summary.
+1. **Read the raw source in full.** The raw is the source of truth — distil must extract knowledge from it, not from the summary. If the raw exceeds the Read tool's token limit, read it in chunks using `offset`/`limit` until the whole body is covered. The existing summary may be read first as orienting context (what the article is about, where the key sections are), but it must NOT substitute for reading the raw.
 2. **Read existing context.** Read `wiki/_wiki-index.md`, then relevant sub-indexes to find pages that may need updating.
 3. **Extract and organize:** entities, topics, terminology, connections, contradictions, potential comparisons.
 4. **Create or update entity pages** in `wiki/entities/`. Entity pages accumulate across ALL sources — never overwrite, always add.
@@ -22,7 +22,7 @@ The user specifies which source to distil. If not specified, check `wiki/log.md`
 6. **Optionally create comparison or synthesis pages** if warranted.
 7. **Update all indexes** (sub-indexes + `_wiki-index.md` stats).
 8. **Update glossary** with new terms.
-9. **Increment `distil_times`** in the summary file.
+9. **Increment `distil_times`** in the summary file. If a closer reading of the raw reveals the summary is inaccurate or misleading, correct the summary body as well — the summary should remain a faithful orienting snapshot.
 10. **Log it** in `wiki/log.md`.
 
 ## Rules

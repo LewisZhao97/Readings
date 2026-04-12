@@ -13,7 +13,7 @@ created: 2026-04-12
 updated: 2026-04-12
 type: summary
 recommend: yes
-distil_times: 0
+distil_times: 2
 ---
 
 # Attention Is All You Need — Vaswani et al.
