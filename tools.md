@@ -10,3 +10,7 @@ Open-source tool that converts any URL into LLM-friendly input with a simple pre
 ---
 ### [MarkItDown](https://github.com/microsoft/markitdown)
 Open-source Python tool from Microsoft for converting files and office documents to Markdown.
+
+---
+### [MinerU](https://github.com/opendatalab/MinerU)
+Transforms complex documents like PDFs into LLM-ready markdown/JSON for your Agentic workflows.
