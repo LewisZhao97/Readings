@@ -75,3 +75,38 @@
 - **Glossary terms added:** none
 - **distil_times:** 1 → 2
 - **Reason:** re-distil from raw per updated skill.
+
+## [2026-04-14] ingest | RenderFormer — Zeng et al.
+
+- **Source:** https://dl.acm.org/doi/10.1145/3721238.3730595
+- **Raw:** `raw/articles/RenderFormer Transformer based Neural Rendering of Triangle Meshes with Global Illumination.md`
+- **Summary:** `wiki/summaries/Graphics - RenderFormer.md`
+- **Recommend:** yes
+
+## [2026-04-14] ingest | Space Warp with Depth Propagation in XR Applications — Xiong & Peri
+
+- **Source:** https://ieeexplore.ieee.org/document/9666145
+- **Raw:** `raw/articles/Space Warp with Depth Propagation in XR Applications.md`
+- **Summary:** `wiki/summaries/XR - Space Warp with Depth Propagation.md`
+- **Recommend:** partial
+
+## [2026-04-14] ingest | Image Guided Depth Super-Resolution for Spacewarp in XR Applications — Peri & Xiong
+
+- **Source:** https://ieeexplore.ieee.org/document/9427716
+- **Raw:** `raw/articles/Image Guided Depth Super-Resolution for Spacewarp in XR Applications.md`
+- **Summary:** `wiki/summaries/XR - Image Guided Depth Super-Resolution.md`
+- **Recommend:** partial
+- **Note:** companion/predecessor to the depth-propagation paper above — same authors, same problem (reduce depth bandwidth for XR Space-Warp), superseded approach (regular-grid downsample + joint bilateral upsampling vs. adaptive feature-based sparse points + optimization-based propagation).
+
+## [2026-04-14] distil | Xiong & Peri XR depth-reconstruction pair (combined)
+
+- **Sources:** `raw/articles/Space Warp with Depth Propagation in XR Applications.md`, `raw/articles/Image Guided Depth Super-Resolution for Spacewarp in XR Applications.md` (read in full)
+- **Wiki pages created:**
+  - `wiki/topics/XR - Depth Reconstruction for Space-Warp.md` (unified topic — shared problem, pipeline, reprojection math, limitations)
+  - `wiki/comparisons/XR - Depth Super-Resolution vs Depth Propagation.md` (side-by-side algorithmic diff)
+  - `wiki/entities/XR - Space-Warp.md` (the reprojection technique)
+  - `wiki/entities/Graphics - Bilateral Filter.md` (shared primitive)
+- **Wiki pages updated:** none
+- **Glossary terms added:** Space-Warp, Bilateral Filter, Depth Propagation
+- **distil_times:** 0 → 1 (both summaries)
+- **Reason:** user requested combined distil — shared content consolidated into one topic page; algorithmic diff split into a comparison page per user follow-up.

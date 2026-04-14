@@ -17,8 +17,11 @@
 
 ## Concepts / Architectures / Systems
 
-| Entity | Page | Sources |
-|--------|------|---------|
-| Memex | [Knowledge Management - Memex.md](Knowledge%20Management%20-%20Memex.md) | 1 |
-| Transformer | [Deep Learning - Transformer.md](Deep%20Learning%20-%20Transformer.md) | 1 |
-| Meta-Harness | [LLM - Meta-Harness.md](LLM%20-%20Meta-Harness.md) | 1 |
+| Entity           | Page                                                                     | Sources |
+| ---------------- | ------------------------------------------------------------------------ | ------- |
+| Memex            | [Knowledge Management - Memex.md](Knowledge%20Management%20-%20Memex.md) | 1       |
+| Transformer      | [Deep Learning - Transformer.md](Deep%20Learning%20-%20Transformer.md)   | 1       |
+| Meta-Harness     | [LLM - Meta-Harness.md](LLM%20-%20Meta-Harness.md)                       | 1       |
+| Space-Warp       | [XR - Space-Warp.md](XR%20-%20Space-Warp.md)                             | 2       |
+| Bilateral Filter | [Graphics - Bilateral Filter.md](Graphics%20-%20Bilateral%20Filter.md)   | 2       |
+|                  |                                                                          |         |

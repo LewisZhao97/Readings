@@ -5,9 +5,9 @@ author:
   - Yue Dong
 source: https://dl.acm.org/doi/10.1145/3721238.3730595
 created: 2026-04-13
-tags:
-status: pending
-ingested: none
+tags: [neural-rendering, transformer, global-illumination, computer-graphics, rendering-equation]
+status: done
+ingested: 2026-04-14
 ---
 CHONG ZENG, State Key Lab of CAD & CG, Zhejiang University, China and Microsoft Research Asia, China
 
