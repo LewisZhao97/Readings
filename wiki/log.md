@@ -122,3 +122,22 @@
   - `wiki/topics/Deep Learning - Attention Mechanisms.md` — added RoPE + 3D spatial RoPE to positional-encoding section, added cross-attention-across-heterogeneous-sequences section with RenderFormer as example
 - **Glossary terms added:** BRDF, GGX, Global Illumination, Neural Rendering, RenderFormer, Rendering Equation, RoPE
 - **distil_times:** 0 → 1
+
+## [2026-04-15] ingest | XR Blocks: Accelerating Human-Centered AI + XR Innovation — Li, Numan et al.
+
+- **Source:** https://arxiv.org/html/2509.25504v1
+- **Raw:** `raw/articles/XR Blocks Accelerating Human-Centered AI + XR Innovation.md`
+- **Summary:** `wiki/summaries/XR - XR Blocks.md`
+- **Recommend:** partial
+- **Note:** directional white paper / vision piece, not an evaluated research contribution. Value is in the conceptual model (Reality Model, Interaction Grammar, Script) and the curated XR-framework landscape, not the (small, partially aspirational) SDK surface.
+
+## [2026-04-15] distil | XR Blocks — Li, Numan et al.
+
+- **Source:** `raw/articles/XR Blocks Accelerating Human-Centered AI + XR Innovation.md` (read in full)
+- **Wiki pages created:**
+  - `wiki/entities/XR - XR Blocks.md` (framework entity — Reality Model, Core Engine modules, Interaction Grammar, design principles, demos, landscape comparison, limitations)
+  - `wiki/topics/XR - AI + XR Integration.md` (broad topic — ecosystem-flywheel argument, Reality Model pattern, explicit vs implicit intents, exemplars, open challenges)
+- **Wiki pages updated:** none
+- **Glossary terms added:** Generative Reality, Interaction Grammar, Reality Model, Vibe Coding, WebXR
+- **distil_times:** 0 → 1
+- **Reason:** partial-recommend white paper; distilled the conceptual vocabulary and framework-landscape map per ingest plan. Skipped speculative sections (differentiable realities, learnable grammars) beyond noting them as future directions.

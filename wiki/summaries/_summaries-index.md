@@ -12,3 +12,4 @@
 | Zeng et al. — RenderFormer | [Graphics - RenderFormer.md](Graphics%20-%20RenderFormer.md) | 2026-04-14 | yes | neural-rendering, transformer, global-illumination, computer-graphics |
 | Xiong & Peri — Space Warp with Depth Propagation | [XR - Space Warp with Depth Propagation.md](XR%20-%20Space%20Warp%20with%20Depth%20Propagation.md) | 2026-04-14 | partial | xr, space-warp, depth-propagation, remote-rendering |
 | Peri & Xiong — Image Guided Depth Super-Resolution | [XR - Image Guided Depth Super-Resolution.md](XR%20-%20Image%20Guided%20Depth%20Super-Resolution.md) | 2026-04-14 | partial | xr, space-warp, depth-super-resolution, bilateral-filter |
+| Li, Numan et al. — XR Blocks | [XR - XR Blocks.md](XR%20-%20XR%20Blocks.md) | 2026-04-15 | partial | xr, ai-xr, toolkit, webxr, sdk |

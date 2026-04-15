@@ -25,4 +25,5 @@
 | Space-Warp       | [XR - Space-Warp.md](XR%20-%20Space-Warp.md)                             | 2       |
 | Bilateral Filter | [Graphics - Bilateral Filter.md](Graphics%20-%20Bilateral%20Filter.md)   | 2       |
 | RenderFormer    | [Graphics - RenderFormer.md](Graphics%20-%20RenderFormer.md)              | 1       |
+| XR Blocks        | [XR - XR Blocks.md](XR%20-%20XR%20Blocks.md)                             | 1       |
 |                  |                                                                          |         |

@@ -10,3 +10,4 @@
 | Neural Rendering | [Graphics - Neural Rendering.md](Graphics%20-%20Neural%20Rendering.md) | 1 |
 | Harness Engineering | [LLM - Harness Engineering.md](LLM%20-%20Harness%20Engineering.md) | 1 |
 | Depth Reconstruction for Space-Warp | [XR - Depth Reconstruction for Space-Warp.md](XR%20-%20Depth%20Reconstruction%20for%20Space-Warp.md) | 2 |
+| AI + XR Integration | [XR - AI + XR Integration.md](XR%20-%20AI%20%2B%20XR%20Integration.md) | 1 |
