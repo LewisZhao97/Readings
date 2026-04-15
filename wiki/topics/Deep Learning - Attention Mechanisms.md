@@ -2,12 +2,14 @@
 title: Attention Mechanisms
 sources:
   - "[[raw/articles/Attention Is All You Need]]"
+  - "[[raw/articles/RenderFormer Transformer based Neural Rendering of Triangle Meshes with Global Illumination]]"
 tags:
   - deep-learning
   - attention-mechanism
   - transformer
+  - positional-encoding
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-04-15
 type: topic
 ---
 
@@ -67,6 +69,20 @@ Because attention is permutation-invariant, order information must be added to i
 
 - **Sinusoidal (fixed):** `PE(pos, 2i) = sin(pos / 10000^(2i/d))`, `PE(pos, 2i+1) = cos(...)`. Wavelengths form a geometric progression from 2π to 10000·2π. Chosen in the Transformer because `PE(pos+k)` is a linear function of `PE(pos)`, which should make relative-offset attention easy to learn, and because fixed encodings may extrapolate to unseen sequence lengths.
 - **Learned embeddings:** a table indexed by position. Table 3 row (E) shows near-identical BLEU (25.7 vs 25.8).
+- **Rotary Position Embedding (RoPE)** [Su et al. 2024a] — express position as a rotation applied to Q and K; the dot-product Q·K^T then depends on the *relative* offset between positions, so the model natively sees relative positions without separate additive terms. Applied at every attention layer, not just the input.
+- **3D relative spatial RoPE** — [[Graphics - RenderFormer]] adapts RoPE to geometric positions. Instead of an integer index, the "position" is three 3D vertex coordinates (9-d vector), expanded via a log-spaced frequency bank (6 frequencies 1→5) to 54 scaled components, encoded as sin/cos pairs in a block-diagonal rotation matrix. Applied to the first 108 of each head's 128 channels per attention layer. Result: attention is automatically **translation-invariant** (relative positions only) and operates in 3D world/camera space rather than sequence-index space. Note: **rotation invariance is not free** — SO(3) non-commutativity breaks the RoPE factorization, so rotational robustness is achieved by data augmentation rather than architecture.
+
+### When to use which positional encoding
+
+The choice is tightly coupled to the domain's notion of "position":
+
+| Domain | Natural position | Typical encoding |
+|---|---|---|
+| Language | Integer token index | Sinusoidal or RoPE (1D) |
+| Vision | 2D patch coordinates | Learned 2D or 2D RoPE |
+| 3D rendering | 3D vertex / point coordinates (floating-point, continuous) | 3D RoPE on geometric coords (RenderFormer); additive NeRF-style encoding also an option but was found unstable for triangle positions in RenderFormer |
+
+The general pattern: identify what "moving" a token should and shouldn't change about the output, and pick an encoding whose invariances match.
 
 ## Why attention replaced recurrence
 
@@ -83,7 +99,13 @@ The constant-time path plus sequence-axis parallelism was the combination that u
 
 Attention distributions can be visualized per head. Individual heads in a trained Transformer encoder clearly learn to perform different tasks — syntactic dependency tracking, coreference, long-distance completion — giving inspection surface that weight-space models lack.
 
+## Cross-attention between heterogeneous sequences
+
+The decoder's encoder-attention (pattern 3 above) generalizes to any setting where one sequence needs to pull from another. [[Graphics - RenderFormer]] uses it to connect two very different sequences: the query sequence is **ray-bundle tokens** (each representing 8×8 output pixels' rays), the key/value sequence is **triangle tokens** from a separately-processed view-independent stage. The cross-attention layer learns "which triangles matter for these pixels." Attention-weight visualization confirms it concentrates on directly-visible triangles and triangles around the mirror-reflected direction, with the spread widening as the surface roughness increases — the model has learned a specular-lobe-like attention shape without supervision. This is a concrete example of cross-attention learning a physically-interpretable gathering pattern.
+
 ## Related
 
 - [[Deep Learning - Transformer]]
 - [[Deep Learning - Attention Is All You Need]] (summary)
+- [[Graphics - RenderFormer]] — 3D spatial RoPE and physically-interpretable cross-attention.
+- [[Graphics - Neural Rendering]]

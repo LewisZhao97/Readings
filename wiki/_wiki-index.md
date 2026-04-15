@@ -17,5 +17,5 @@
 ## Stats
 
 - **Total sources ingested:** 7
-- **Total wiki pages:** 18
-- **Last updated:** 2026-04-14
+- **Total wiki pages:** 20
+- **Last updated:** 2026-04-15

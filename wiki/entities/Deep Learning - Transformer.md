@@ -2,13 +2,15 @@
 title: Transformer
 sources:
   - "[[raw/articles/Attention Is All You Need]]"
+  - "[[raw/articles/RenderFormer Transformer based Neural Rendering of Triangle Meshes with Global Illumination]]"
 tags:
   - deep-learning
   - transformer
   - attention-mechanism
   - neural-machine-translation
+  - neural-rendering
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-04-15
 type: entity
 ---
 
@@ -113,7 +115,30 @@ The combination of these properties is what enabled the scaling regime that prod
 - Reference code: [tensor2tensor](https://github.com/tensorflow/tensor2tensor).
 - Authors: Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin — Google Brain / Google Research / University of Toronto. Contributions note: Jakob proposed the replace-RNN-with-self-attention idea; Noam proposed scaled dot-product attention, multi-head attention, and the parameter-free position representation.
 
+## Modern recipe deltas seen in later work
+
+Subsequent transformer-based systems have converged on a set of training-stability and throughput changes to the original recipe. [[Graphics - RenderFormer]] (Zeng et al. 2025) uses, as a representative snapshot:
+
+- **Pre-normalization with RMS-Normalization** (LLaMA-style) instead of the post-norm LayerNorm of the original Transformer. Stabilizes deep stacks.
+- **SwiGLU** activation in the FFN instead of ReLU.
+- **QK-Normalization** [Henry et al. 2020] to stabilize attention at scale.
+- **Mixed-precision**: bf16 for most layers, tf32 only where the task demands higher precision (e.g., the HDR-decoding view-dependent stage in RenderFormer).
+- **FlashAttention-2** [Dao 2024] and kernel-fused primitives (e.g., Liger Kernel) for throughput.
+- **Register tokens** [Darcet et al. 2024] — a handful of non-content tokens that transformers can use as scratchpad / noise sink.
+
+## Use beyond language
+
+The original Transformer targeted sequence transduction (translation, parsing). Since then the architecture has been lifted to many domains, typically by designing a domain-appropriate **tokenization** and **positional encoding**:
+
+- **Vision** — ViT: image patches as tokens, learned 2D positional embeddings [Dosovitskiy et al. 2020].
+- **BERT / GPT families** — masked-LM / autoregressive language pretraining [Devlin et al. 2019].
+- **3D scene rendering** — [[Graphics - RenderFormer]] tokenizes **triangles** with material properties and encodes position via **3D relative spatial RoPE** on vertex coordinates. The token's "position" is its 3D pose in the scene, not an index. Cross-attention connects ray-bundle tokens to triangle tokens. See [[Deep Learning - Attention Mechanisms]] for positional-encoding variants.
+
+The pattern across these lifts: keep the core attention + FFN + pre-norm backbone, change tokenization and positional encoding to match the domain's natural notion of "position."
+
 ## Related
 
 - [[Deep Learning - Attention Mechanisms]]
 - [[Deep Learning - Attention Is All You Need]] (summary)
+- [[Graphics - RenderFormer]] — concrete non-language application with novel 3D positional encoding.
+- [[Graphics - Neural Rendering]] — broader context for transformer-based rendering.

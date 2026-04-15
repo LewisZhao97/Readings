@@ -110,3 +110,15 @@
 - **Glossary terms added:** Space-Warp, Bilateral Filter, Depth Propagation
 - **distil_times:** 0 → 1 (both summaries)
 - **Reason:** user requested combined distil — shared content consolidated into one topic page; algorithmic diff split into a comparison page per user follow-up.
+
+## [2026-04-15] distil | RenderFormer — Zeng et al.
+
+- **Source:** `raw/articles/RenderFormer Transformer based Neural Rendering of Triangle Meshes with Global Illumination.md` (read in full, chunked)
+- **Wiki pages created:**
+  - `wiki/entities/Graphics - RenderFormer.md` (full architecture, training, ablations, limitations, probe results)
+  - `wiki/topics/Graphics - Neural Rendering.md` (broad area — families of neural rendering, rendering-equation relationships, open challenges)
+- **Wiki pages updated:**
+  - `wiki/entities/Deep Learning - Transformer.md` — added modern-recipe deltas (RMS-Norm, SwiGLU, QK-Norm, FlashAttention-2, register tokens) and a "use beyond language" section linking to RenderFormer
+  - `wiki/topics/Deep Learning - Attention Mechanisms.md` — added RoPE + 3D spatial RoPE to positional-encoding section, added cross-attention-across-heterogeneous-sequences section with RenderFormer as example
+- **Glossary terms added:** BRDF, GGX, Global Illumination, Neural Rendering, RenderFormer, Rendering Equation, RoPE
+- **distil_times:** 0 → 1

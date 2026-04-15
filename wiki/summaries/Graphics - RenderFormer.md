@@ -4,10 +4,10 @@ sources:
   - "[[raw/articles/RenderFormer Transformer based Neural Rendering of Triangle Meshes with Global Illumination]]"
 tags: [neural-rendering, transformer, global-illumination, computer-graphics, rendering-equation]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-15
 type: summary
 recommend: yes
-distil_times: 0
+distil_times: 1
 ---
 
 ## Overview
