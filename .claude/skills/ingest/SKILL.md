@@ -14,7 +14,7 @@ The user specifies which raw file to ingest, or provides a URL (fetch with WebFe
 
 ## Steps
 
-1. **Read the raw file.** If `status: done`, inform the user. Otherwise proceed.
+1. **Read the raw file.** If `status: true`, inform the user. Otherwise proceed.
 2. **Refine tags.** Review the raw file's `tags` — the user's may be approximate. Replace with accurate, consistent tags after reading the content.
 3. **Create summary** in `wiki/summaries/`. Include:
    - Concise overview (2-3 sentences)
@@ -22,7 +22,7 @@ The user specifies which raw file to ingest, or provides a URL (fetch with WebFe
    - Entities mentioned
    - Related topics
    - **"Recommend Reason" section at the end** explaining why to distil (or not)
-4. **Update raw frontmatter:** `status: done`, `ingested: YYYY-MM-DD`
+4. **Update raw frontmatter:** `status: true`, `ingested: YYYY-MM-DD`
 5. **Update indexes:** `_summaries-index.md` and `_wiki-index.md` stats
 6. **Log it** in `wiki/log.md`
 7. **Present to user.** Show summary and recommendation. Ask if they want to `/distil`.

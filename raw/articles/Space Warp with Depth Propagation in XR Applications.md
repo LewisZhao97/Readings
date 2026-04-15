@@ -5,8 +5,15 @@ author:
   - Christopher Peri
 source: https://ieeexplore.ieee.org/document/9666145
 created: 2026-04-14
-tags: [xr, space-warp, depth-map, depth-propagation, hmd, remote-rendering, computer-graphics]
-status: done
+tags:
+  - xr
+  - space-warp
+  - depth-map
+  - depth-propagation
+  - hmd
+  - remote-rendering
+  - computer-graphics
+status: true
 ingested: 2026-04-14
 ---
 Yingen Xiong

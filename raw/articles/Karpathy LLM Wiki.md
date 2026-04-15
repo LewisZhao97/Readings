@@ -8,7 +8,7 @@ tags:
   - RAG
   - wiki
   - knowledge-management
-status: done
+status: true
 ingested: 2026-04-11
 ---
 # LLM Wiki

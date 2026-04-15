@@ -7,7 +7,7 @@ tags:
   - real-time-rendering
   - ray-marching
   - computer-graphics
-status: done
+status: true
 ingested: 2026-04-11
 ---
 If you’ve ever visited Shadertoy, you’ve probably seen ray marching in action. It’s an interesting technique that can be used to generate fully procedural environments entirely from a single fragment shader. Unfortunately, there aren’t a ton of great resources for learning these techniques. So, I wanted to create a quick tutorial on setting up a basic ray marching shader. I will be using Derivative’s TouchDesigner for rendering, but you should be able to port this to any other 3D environment fairly easily. In future blog posts, we will build upon the topics covered in this tutorial to create more interesting scenes!

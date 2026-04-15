@@ -12,7 +12,7 @@ tags:
   - neural-machine-translation
   - sequence-to-sequence
   - natural-language-processing
-status: done
+status: true
 ingested: 2026-04-12
 ---
 Provided proper attribution is provided, Google hereby grants permission to reproduce the tables and figures in this paper solely for use in journalistic or scholarly works.

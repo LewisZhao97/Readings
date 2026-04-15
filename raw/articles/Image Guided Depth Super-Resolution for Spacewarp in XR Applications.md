@@ -5,8 +5,15 @@ author:
   - Yingen Xiong
 source: https://ieeexplore.ieee.org/document/9427716
 created: 2026-04-14
-tags: [xr, space-warp, depth-map, depth-super-resolution, bilateral-filter, hmd, remote-rendering]
-status: done
+tags:
+  - xr
+  - space-warp
+  - depth-map
+  - depth-super-resolution
+  - bilateral-filter
+  - hmd
+  - remote-rendering
+status: true
 ingested: 2026-04-14
 ---
 Christopher Peri and Yingen Xiong

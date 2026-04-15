@@ -10,7 +10,7 @@ You are performing a health check on the knowledge base.
 
 ## Steps
 
-1. **Scan raw sources.** Find any with `status: pending` — these haven't been distilled yet.
+1. **Scan raw sources.** Find any with `status: false` — these haven't been distilled yet.
 
 2. **Check naming convention.** Verify files follow the conventions defined in CLAUDE.md.
 
