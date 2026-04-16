@@ -141,3 +141,10 @@
 - **Glossary terms added:** Generative Reality, Interaction Grammar, Reality Model, Vibe Coding, WebXR
 - **distil_times:** 0 → 1
 - **Reason:** partial-recommend white paper; distilled the conceptual vocabulary and framework-landscape map per ingest plan. Skipped speculative sections (differentiable realities, learnable grammars) beyond noting them as future directions.
+
+## [2026-04-16] feed | XR real-time rendering & ray-tracing
+
+- **Feed file:** `raw/feeds/2026-04-16.md`
+- **Query:** latest papers on XR real-time rendering / XR ray-tracing (ACM SIGGRAPH, IEEE, arXiv, blog posts)
+- **Candidates:** 10 (all `new` — none already ingested)
+- **Top picks:** GRTX (arXiv 2601.20429, Jan 2026); VR-Splatting (PACMCGIT / I3D 2025, DOI 10.1145/3728302); Radiance Fields in XR survey (arXiv 2508.04326 / IEEE TVCG 2025).

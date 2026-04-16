@@ -9,6 +9,7 @@ A personal wiki-style knowledge base. Source materials live in `raw/` (immutable
 ├── CLAUDE.md                    # This file — schema and conventions
 ├── raw/                         # Layer 1: Original sources (immutable body)
 │   ├── articles/ papers/ notes/ tweets/ assets/ ...
+│   └── feeds/                   # Dated candidate lists from /feedme (YYYY-MM-DD.md)
 ├── wiki/                        # Layer 2: Distilled knowledge
 │   ├── _wiki-index.md           # Top-level delegation map — read FIRST
 │   ├── log.md                   # Chronological append-only log
@@ -66,6 +67,22 @@ ingested: none | 2026-04-10 # date when ingested
 ```
 
 LLM updates `status`, `ingested`, and refines `tags` during ingest — never touches body content.
+
+### Feed files (`raw/feeds/*.md`)
+
+```yaml
+---
+title: "Feed — <query> — 2026-04-16"
+query: "<argument as given>"
+date: 2026-04-16
+type: feed
+tags:
+  - <topical tag derived from the query / candidates, e.g. neural-rendering>
+  - <more topical tags as warranted>
+---
+```
+
+Written by `/feedme`; immutable snapshots of a web-search candidate run. Tags should reflect the subject matter (so feeds are discoverable by topic), not include a generic `feed` tag — the `type: feed` field already marks the kind.
 
 ### Wiki summaries (`wiki/summaries/*.md`)
 
