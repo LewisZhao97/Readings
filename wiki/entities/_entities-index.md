@@ -25,5 +25,7 @@
 | Space-Warp       | [XR - Space-Warp.md](XR%20-%20Space-Warp.md)                             | 2       |
 | Bilateral Filter | [Graphics - Bilateral Filter.md](Graphics%20-%20Bilateral%20Filter.md)   | 2       |
 | RenderFormer    | [Graphics - RenderFormer.md](Graphics%20-%20RenderFormer.md)              | 1       |
-| XR Blocks        | [XR - XR Blocks.md](XR%20-%20XR%20Blocks.md)                             | 1       |
+| XR Blocks        | [XR - XR Blocks.md](XR%20-%20XR%20Blocks.md)                             | 2       |
+| Vibe Coding XR   | [XR - Vibe Coding XR.md](XR%20-%20Vibe%20Coding%20XR.md)                 | 1       |
+| VCXR60           | [XR - VCXR60.md](XR%20-%20VCXR60.md)                                     | 1       |
 |                  |                                                                          |         |

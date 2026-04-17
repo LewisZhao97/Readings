@@ -10,7 +10,14 @@ Process a new raw source into the knowledge base. Conventions (naming, frontmatt
 
 ## Input
 
-The user specifies which raw file to ingest, or provides a URL (fetch with WebFetch and save to `raw/`).
+The user specifies which raw file to ingest, a URL, or a title (often from a recent `/feedme` candidate list).
+
+**Resolving the input:**
+1. If a **raw file path** is given → use it.
+2. If a **title** is given (no path, no URL) → glob `raw/articles/` for files matching key words from the title. The user's workflow is to `/feedme`, then manually download picks into `raw/articles/` before asking to ingest, so the file is usually already there.
+   - If found → proceed with that file.
+   - If not found → tell the user it's not in `raw/` and ask them to download it. Do NOT auto-fetch.
+3. If a **URL** is explicitly given as the argument → fetch with WebFetch and save to `raw/articles/` (the one case where auto-fetch is authorized).
 
 ## Steps
 
@@ -32,4 +39,4 @@ The user specifies which raw file to ingest, or provides a URL (fetch with WebFe
 - Do NOT modify body content of raw files — only frontmatter (`status`, `ingested`, `tags`)
 - Do NOT create entity, topic, comparison, or synthesis pages (that's `/distil`)
 - Summary is always created regardless of recommendation
-- Only exception for creating raw files: user provides a URL
+- Only create a raw file when the user explicitly provides a URL as the argument. A bare title is NOT a fetch request — look in `raw/` first, ask if absent.

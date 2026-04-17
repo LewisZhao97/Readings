@@ -2,14 +2,17 @@
 title: "AI + XR Integration"
 sources:
   - "[[raw/articles/XR Blocks Accelerating Human-Centered AI + XR Innovation]]"
+  - "[[raw/articles/Vibe Coding XR Accelerating AI + XR Prototyping with XR Blocks and Gemini]]"
 tags:
   - xr
   - ai-xr
   - human-centered-ai
   - generative-reality
   - human-computer-interaction
+  - vibe-coding
+  - llm-code-generation
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-04-17
 type: topic
 ---
 
@@ -58,17 +61,32 @@ The framework interprets raw events into intents; the interpreter itself becomes
 
 `ai.query(...)`, `ai.runModel(...)`, `agent.useTool(...)`, `agent.remember(...)` treat AI as a primitive like `math.sqrt` — available everywhere, composable with other primitives, not a walled-off service call.
 
+### Reality Model as *LLM-interface* layer
+
+The 2025 [[XR - XR Blocks|XR Blocks]] paper argued the Reality Model would help *human* creators by hiding sensor fusion. The 2026 [[XR - Vibe Coding XR]] paper reports the stronger version: the Reality Model is also the right interface *for LLMs*, because its surface is semantically dense and maps 1:1 onto natural-language concepts. Raw Unity/Unreal API trees blow out LLM context windows and induce API hallucinations; a semantically dense abstraction (a few dozen primitives aligned to natural-language nouns/verbs) fits the LLM reasoning grain. This is the concrete reason [[XR - Vibe Coding XR|vibe coding]] works on top of XR Blocks but has struggled on top of game engines (LLMR, DreamCodeVR, DreamGarden all need hierarchical planning / asynchronous compilation to cope).
+
+### Grounding corpus + constrained system prompt
+
+Generalizing from the [[XR - Vibe Coding XR#system-prompt-architecture|Vibe Coding XR system prompt]]: for an LLM to reliably generate code against a domain framework, the system prompt should include (1) a domain-expert persona, (2) pinned dependency versions to prevent hallucination of plausible-but-nonexistent packages, (3) strict architectural constraints (file layout, class shape, lifecycle methods), (4) a corpus of curated templates/samples as reference examples, (5) a planning directive forcing explicit intermediate reasoning before code emission. This is a reusable recipe — not XR-specific — for any codegen-over-rich-API task.
+
+### Runtime-as-implicit-validator
+
+For codegen targets with a strict runtime (WebGL, shader compilation, WebXR session lifecycle), the runtime itself acts as an automatic correctness oracle — no hand-written unit tests needed. See [[LLM - Code Generation Benchmarks]].
+
 ## Exemplars
 
+- **[[XR - Vibe Coding XR|Vibe Coding XR]]** (Du et al. 2026, Google) — end-to-end workflow: natural-language prompt → Gemini → running WebXR experience on an Android XR headset in <90 s. 95.5% pass@1 on [[XR - VCXR60]]. The first measured AI+XR system with non-toy numbers.
 - **XR-Objects** (Dogan et al. 2024) — long-pinch on a real-world object → AI identifies it → virtual buttons attach for queries. Passive objects become programmable interfaces.
 - **Sensible Agent** (Lee et al. 2025, built on XR Blocks) — proactive AR assistant that intervenes only when appropriate. Demonstrates the value of a unified Reality Model: the agent reasons over perception supplied by the framework, not raw sensors.
-- **LLMR** (De La Torre et al. 2024) and **Thing2Reality** (Liu et al. 2024) — natural-language scene editing / generation in 3D.
+- **LLMR** (De La Torre et al. 2024), **Thing2Reality** (Hu et al. 2025), **DreamCodeVR** (Giunchi et al. 2024), **DreamGarden** (Earle et al. 2025) — natural-language scene / game generation in 3D. All target Unity or Unreal; all rely on hierarchical planning / asynchronous compilation to cope with large engine API surfaces. Contrast with Vibe Coding XR's grain-aligned web-native approach.
+- **agentAR** (Zhu et al. 2025), **Caring-AI** (Shi et al. 2025), **Ubiq-Genie** (Numan et al. 2023) — tool-augmented / context-aware / server-client architectures for LLMs in XR.
+- **DialogLab** (Hu et al. 2025) — authoring / simulating / testing dynamic group conversations in hybrid human-AI XR conversations.
 - **DepthLab** (Du et al. 2020) — depth-aware AR interactions; cited as what XR Blocks operationalizes and generalizes.
 - **Gemini Live integration** — live multi-modal LLM in an XR context.
 
 ## Forward-looking challenges
 
-- **Vibe coding for XR:** translating a natural-language prompt ("pinch an object, generate a poem of it") into orchestrated calls across `input`, `world`, `agent`, `ui`. Currently a demo at best.
+- ~~**Vibe coding for XR**~~ — delivered (95.5% pass@1 one-shot) by [[XR - Vibe Coding XR]]. Remaining open problems: multi-turn / iterative refinement (untested); token-cost optimization; cross-compilation to native engines; multimodal prompting (gaze, micro-gestures, cross-device).
 - **Differentiable realities:** an AI tunes lighting, geometry, agent behavior toward an affective goal ("make this room feel relaxing") — requires deep integration of interactive frameworks with ML autodiff (TextGrad, ToolGrad-style).
 - **Learnable interaction grammars:** systems that learn a user's idiosyncratic gestures and preferences rather than using hand-designed mappings.
 - **Accessibility (SIIDs):** situationally-induced impairments must be first-class for AI assistance to be equitable.

@@ -4,3 +4,5 @@ Thumbs.db
 
 # Obsidian
 .obsidian/
+
+.claude/settings.local.json

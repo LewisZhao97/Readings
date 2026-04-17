@@ -1,5 +1,12 @@
 # Log
 
+## [2026-04-17] ingest | World Mouse — Tütüncü, Gonzalez-Franco, Patel, Gonzalez
+
+- **Source:** https://arxiv.org/html/2603.10984v1 (CHI '26)
+- **Raw:** `raw/articles/World Mouse Exploring Interactions with a Cross-Reality Cursor.md` (already in raw/ — downloaded manually from 2026-04-17 feed)
+- **Summary:** `wiki/summaries/XR - World Mouse.md`
+- **Recommend:** partial (vision + prototype paper; no user study. Worth a small entity page + cross-links to AI+XR integration for the deixis argument)
+
 ## [2026-04-10] ingest | LLM Wiki — Andrej Karpathy
 
 - **Source:** https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
@@ -148,3 +155,32 @@
 - **Query:** latest papers on XR real-time rendering / XR ray-tracing (ACM SIGGRAPH, IEEE, arXiv, blog posts)
 - **Candidates:** 10 (all `new` — none already ingested)
 - **Top picks:** GRTX (arXiv 2601.20429, Jan 2026); VR-Splatting (PACMCGIT / I3D 2025, DOI 10.1145/3728302); Radiance Fields in XR survey (arXiv 2508.04326 / IEEE TVCG 2025).
+
+## [2026-04-17] feed | latest XR research
+
+- **Feed file:** `raw/feeds/2026-04-17.md`
+- **Query:** latest XR research (open web — no source allowlist)
+- **Candidates:** 11 (all `new`; close KB adjacency: Vibe Coding XR → `[[XR - XR Blocks]]`, Geometry Aware Passthrough → `[[XR - Depth Reconstruction for Space-Warp]]`)
+- **Top picks:** How Do We Evaluate Experiences in Immersive Environments? (CHI '26, DOI 10.1145/3772318.3790724); World Mouse (arXiv 2603.10984); Vibe Coding XR (arXiv 2603.24591).
+- **Note:** IEEE VR 2026 papers page not yet populated — re-run once list publishes.
+
+## [2026-04-17] ingest | Vibe Coding XR — Du, Hersh et al.
+
+- **Source:** https://arxiv.org/html/2603.24591v2
+- **Raw:** `raw/articles/Vibe Coding XR Accelerating AI + XR Prototyping with XR Blocks and Gemini.md`
+- **Summary:** `wiki/summaries/XR - Vibe Coding XR.md`
+- **Recommend:** yes
+- **Note:** concrete companion / measured follow-up to the earlier XR Blocks white paper (`[[XR - XR Blocks]]`). Reports 95.5% pass@1 on new VCXR60 benchmark with gemini-3.1-pro.
+
+## [2026-04-17] distil | Vibe Coding XR — Du, Hersh et al.
+
+- **Source:** `raw/articles/Vibe Coding XR Accelerating AI + XR Prototyping with XR Blocks and Gemini.md` (read in full, chunked)
+- **Wiki pages created:**
+  - `wiki/entities/XR - Vibe Coding XR.md` (workflow entity — system-prompt architecture, simulated-to-extended-reality loop, application scenarios, limitations)
+  - `wiki/entities/XR - VCXR60.md` (benchmark entity — composition, harness, pass@1 results, iteration story)
+  - `wiki/topics/LLM - Code Generation Benchmarks.md` (HumanEval → VCXR60 lineage; runtime-as-implicit-validator pattern; pass@k metric)
+- **Wiki pages updated:**
+  - `wiki/entities/XR - XR Blocks.md` — added Vibe Coding XR section, shipped-vs-speculative status updates, v0.11.0 info, grounding-corpus insight
+  - `wiki/topics/XR - AI + XR Integration.md` — added Reality-Model-as-LLM-interface, grounding-corpus+constrained-system-prompt, and runtime-as-validator design patterns; updated exemplars; moved vibe-coding from "forward-looking" to "delivered"
+- **Glossary terms added:** Pass@1 / pass@k, VCXR60; updated Vibe Coding entry to link to Vibe Coding XR entity.
+- **distil_times:** 0 → 1

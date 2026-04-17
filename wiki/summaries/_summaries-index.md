@@ -13,3 +13,5 @@
 | Xiong & Peri — Space Warp with Depth Propagation | [XR - Space Warp with Depth Propagation.md](XR%20-%20Space%20Warp%20with%20Depth%20Propagation.md) | 2026-04-14 | partial | xr, space-warp, depth-propagation, remote-rendering |
 | Peri & Xiong — Image Guided Depth Super-Resolution | [XR - Image Guided Depth Super-Resolution.md](XR%20-%20Image%20Guided%20Depth%20Super-Resolution.md) | 2026-04-14 | partial | xr, space-warp, depth-super-resolution, bilateral-filter |
 | Li, Numan et al. — XR Blocks | [XR - XR Blocks.md](XR%20-%20XR%20Blocks.md) | 2026-04-15 | partial | xr, ai-xr, toolkit, webxr, sdk |
+| Du, Hersh et al. — Vibe Coding XR | [XR - Vibe Coding XR.md](XR%20-%20Vibe%20Coding%20XR.md) | 2026-04-17 | yes | xr, ai-xr, vibe-coding, xr-blocks, webxr, llm-code-generation, benchmark |
+| Tütüncü, Gonzalez-Franco et al. — World Mouse | [XR - World Mouse.md](XR%20-%20World%20Mouse.md) | 2026-04-17 | partial | xr, interaction, input-devices, cursor, cross-reality |

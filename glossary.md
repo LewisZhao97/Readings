@@ -61,6 +61,7 @@
 
 ## P
 
+- **Pass@k** — Probability that at least one of `k` independently drawn samples from an LLM passes an automated oracle (typically unit tests or a runtime error check). The canonical codegen metric, introduced by HumanEval (Chen et al. 2021). See [[LLM - Code Generation Benchmarks]].
 - **Positional Encoding** — Sinusoidal (or learned) vectors added to token embeddings to inject order information into an otherwise permutation-invariant attention model. See [[Deep Learning - Attention Mechanisms]].
 
 ## S
@@ -76,7 +77,8 @@
 
 ## V
 
-- **Vibe Coding** — Intent-driven creation paradigm: a user expresses a high-level natural-language goal and a tool (e.g., Gemini Canvas, Cursor) generates a working application. XR Blocks aspires to extend vibe coding into XR, where the prompt compiles into a Script orchestrating perception, AI, and UI modules. See [[XR - XR Blocks]], [[XR - AI + XR Integration]].
+- **VCXR60** — 60-prompt pilot benchmark for intent-driven XR code generation, introduced by [[XR - Vibe Coding XR]]. Pass@1 = zero runtime errors in a headless Chromium browser. See [[XR - VCXR60]].
+- **Vibe Coding** — Intent-driven creation paradigm: a user expresses a high-level natural-language goal and a tool (e.g., Gemini Canvas, Cursor) generates a working application. In XR, the prompt compiles into a Script orchestrating perception, AI, and UI modules. See [[XR - Vibe Coding XR]], [[XR - XR Blocks]], [[XR - AI + XR Integration]].
 
 ## W
 
