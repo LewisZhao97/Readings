@@ -184,3 +184,11 @@
   - `wiki/topics/XR - AI + XR Integration.md` — added Reality-Model-as-LLM-interface, grounding-corpus+constrained-system-prompt, and runtime-as-validator design patterns; updated exemplars; moved vibe-coding from "forward-looking" to "delivered"
 - **Glossary terms added:** Pass@1 / pass@k, VCXR60; updated Vibe Coding entry to link to Vibe Coding XR entity.
 - **distil_times:** 0 → 1
+
+## [2026-04-17] ingest | Autoresearch — Andrej Karpathy
+
+- **Source:** https://github.com/karpathy/autoresearch
+- **Raw:** `raw/articles/Karpathy Autoresearch AI agents running research on single-GPU nanochat training automatically.md`
+- **Summary:** `wiki/summaries/LLM - Autoresearch.md`
+- **Recommend:** partial
+- **Note:** GitHub README / research-sandbox by Karpathy. Conceptually an open-source instance of the Meta-Harness outer-loop pattern (agent edits code → runs fixed-budget experiment → logs → iterates), applied to model training rather than LLM harness. Novel moves worth distilling: `program.md` as a programmable "skill" for a research organization, 5-min fixed wall-clock budget for cross-architecture comparability, `val_bpb` as vocab-independent metric.

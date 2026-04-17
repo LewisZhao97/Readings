@@ -15,3 +15,4 @@
 | Li, Numan et al. — XR Blocks | [XR - XR Blocks.md](XR%20-%20XR%20Blocks.md) | 2026-04-15 | partial | xr, ai-xr, toolkit, webxr, sdk |
 | Du, Hersh et al. — Vibe Coding XR | [XR - Vibe Coding XR.md](XR%20-%20Vibe%20Coding%20XR.md) | 2026-04-17 | yes | xr, ai-xr, vibe-coding, xr-blocks, webxr, llm-code-generation, benchmark |
 | Tütüncü, Gonzalez-Franco et al. — World Mouse | [XR - World Mouse.md](XR%20-%20World%20Mouse.md) | 2026-04-17 | partial | xr, interaction, input-devices, cursor, cross-reality |
+| Karpathy — Autoresearch | [LLM - Autoresearch.md](LLM%20-%20Autoresearch.md) | 2026-04-17 | partial | llm, ai-agents, autonomous-research, nanochat, meta-research |
