@@ -84,6 +84,21 @@ tags:
 
 Written by `/feedme`; immutable snapshots of a web-search candidate run. Tags should reflect the subject matter (so feeds are discoverable by topic), not include a generic `feed` tag — the `type: feed` field already marks the kind.
 
+### Raw notes (`raw/notes/**/*.md`)
+
+```yaml
+---
+title: "<readable title>"
+date: 2026-04-18
+type: note
+tags:
+  - <field tag>
+  - <topical tags>
+---
+```
+
+Written by `/note`; conversation captures organized by field subfolder (e.g. `graphics/`, `xr/`). Not ingest candidates unless the user later treats one as such.
+
 ### Wiki summaries (`wiki/summaries/*.md`)
 
 ```yaml
@@ -125,8 +140,10 @@ Inline entries. Each term links back to the wiki article(s) defining it.
 
 ## Core Skills
 
+- `/feedme` — search the web for candidates on a topic; writes `raw/feeds/YYYY-MM-DD.md`.
 - `/ingest` — raw → summary with recommendation.
 - `/distil` — summary → entities/topics/comparisons; updates indexes, glossary, cross-links.
+- `/note` — summarize current conversation into `raw/notes/<field>/`.
 - `/query` — answer via delegation map.
 - `/lint` — health check.
 

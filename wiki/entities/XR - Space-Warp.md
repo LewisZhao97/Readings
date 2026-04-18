@@ -5,7 +5,7 @@ sources:
   - "[[raw/articles/Image Guided Depth Super-Resolution for Spacewarp in XR Applications]]"
 tags: [xr, space-warp, reprojection, hmd, remote-rendering]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-18
 type: entity
 ---
 
@@ -45,10 +45,19 @@ Space-Warp is only as good as its depth map. Poor depth → blurred boundaries, 
 
 ## Variants & Lineage
 
-- **Post-rendering 3D warping** — McMillan & Bishop 1997; depth-image-based reprojection for interactive 3D graphics.
-- **Plenoptic modeling** — McMillan & Bishop 1995; image-based rendering foundation.
-- **Asynchronous Spacewarp (ASW)** — Oculus 2016; runtime reprojection to maintain target frame rate on the Rift.
-- **Timewarp** — simpler rotational-only variant that doesn't require depth. Space-Warp generalizes to 6-DOF translation, which does.
+- **Post-rendering 3D warping** — Mark, McMillan & Bishop 1997, "Post-Rendering 3D Warping" (I3D '97); canonical forward-scatter reprojection of a depth image under a pose delta.
+- **Plenoptic modeling** — McMillan & Bishop 1995; image-based rendering foundation, introduces the *occlusion-compatible scan order* used to resolve multi-source-to-one-destination ordering pre-GPU (modern implementations use GPU atomics instead).
+- **Asynchronous Spacewarp (ASW 1.0)** — Oculus 2016, Rift; runtime-estimated optical-flow frame extrapolation, no app-provided motion/depth.
+- **Application SpaceWarp (AppSW / ASW 2.0)** — Quest 2+ ; app submits color + motion vectors + depth; runtime does forward scatter. Exposed to apps via OpenXR as `XR_FB_space_warp`.
+- **Timewarp** — simpler rotational-only (3-DOF) reprojection that doesn't require depth. Space-Warp generalizes to 6-DOF translation, which does.
+
+## Scatter, not Gather
+
+Space-Warp is **forward scatter**: each source-frame pixel is dispatched to its predicted destination. This is theoretically forced, not a design choice:
+
+1. **Motion is anchored at the source.** The motion field is `f: source → destination`. Gathering requires `f⁻¹`, which is ill-posed under disocclusion (multi-valued on occluders, undefined on uncovered background).
+2. **Depth ordering.** Multiple source pixels can map to one destination. Atomic max on depth-packed uints is the GPU-era implementation of McMillan's occlusion-compatible scan order.
+3. **Extrapolation, not interpolation.** Frame-interpolation systems (DLSS 3 Frame Generation, FSR 3) can afford gather because they have bidirectional flow between two known frames. Space-Warp has only one known frame, so scatter is the direct consequence.
 
 ## Implementation Notes
 
@@ -58,5 +67,15 @@ Space-Warp is only as good as its depth map. Poor depth → blurred boundaries, 
 
 ## Sources
 
-- Xiong & Peri, *Space Warp with Depth Propagation in XR Applications* — uses feature-based sparse depth + propagation to feed Space-Warp.
-- Peri & Xiong, *Image Guided Depth Super-Resolution for Spacewarp in XR Applications* — uses joint bilateral super-resolution for the same purpose.
+### Academic
+
+- Mark, W. R., McMillan, L., & Bishop, G. (1997). *Post-Rendering 3D Warping*. I3D '97. — canonical forward-scatter reprojection.
+- McMillan, L., & Bishop, G. (1995). *Plenoptic Modeling: An Image-Based Rendering System*. SIGGRAPH '95. — occlusion-compatible scan order.
+- Xiong & Peri, *Space Warp with Depth Propagation in XR Applications* — feature-based sparse depth + propagation to feed Space-Warp in split rendering.
+- Peri & Xiong, *Image Guided Depth Super-Resolution for Spacewarp in XR Applications* — joint bilateral super-resolution for the same purpose.
+
+### Industry / runtime
+
+- Meta, *Application SpaceWarp (AppSW) — How it Works*, Horizon Unity documentation (`developers.meta.com/horizon/documentation/unity/os-app-spacewarp/`). Describes the runtime as "predict[ing] where the pixel will be in the next frame … by moving pixels to their predicted location in the synthesis frame" — i.e., forward scatter; motion vectors defined as "the NDC space position difference between the current frame and previous frame for corresponding pixels."
+- Meta, *Application SpaceWarp for Unity* (`developers.meta.com/horizon/documentation/unity/unity-asw/`). Describes app-side MotionVecPass: writes 3D motion-vector data (RGB), derived from previous-frame vertex position transformed to clip space.
+- Khronos, `XR_FB_space_warp` OpenXR extension. Standardized surface: app submits color + motion-vector texture + depth per frame; runtime performs the warp.

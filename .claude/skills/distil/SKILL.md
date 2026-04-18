@@ -19,11 +19,16 @@ The user specifies which source to distil. If not specified, check `wiki/log.md`
 3. **Extract and organize:** entities, topics, terminology, connections, contradictions, potential comparisons.
 4. **Create or update entity pages** in `wiki/entities/`. Entity pages accumulate across ALL sources — never overwrite, always add.
 5. **Create or update topic pages** in `wiki/topics/`.
-6. **Optionally create comparison or synthesis pages** if warranted.
-7. **Update all indexes** (sub-indexes + `_wiki-index.md` stats).
-8. **Update glossary** with new terms.
-9. **Increment `distil_times`** in the summary file. If a closer reading of the raw reveals the summary is inaccurate or misleading, correct the summary body as well — the summary should remain a faithful orienting snapshot.
-10. **Log it** in `wiki/log.md`.
+6. **Optionally create comparison pages** if two entities warrant a side-by-side diff.
+7. **Flag potential synthesis opportunities to the user — do NOT auto-create.** A synthesis page is cross-cutting and rare. Scan for cases where the distil contributes a new data point to a pattern that:
+   - spans **≥3 existing entity/topic pages** (horizontal — not just a single source's thesis),
+   - is **not fully argued in any single source** already in the KB (otherwise it's a topic, not a synthesis),
+   - would meaningfully help a reader navigate the accumulated mass (skip if the KB is still too thin for the synthesis to pay for itself).
+   When these conditions hold, include a "Potential synthesis" note in the final presentation describing the candidate (title, the ≥3 pages it would pull from, one-sentence thesis) and ask the user whether to create it. Do not write the synthesis page unprompted.
+8. **Update all indexes** (sub-indexes + `_wiki-index.md` stats).
+9. **Update glossary** with new terms.
+10. **Increment `distil_times`** in the summary file. If a closer reading of the raw reveals the summary is inaccurate or misleading, correct the summary body as well — the summary should remain a faithful orienting snapshot.
+11. **Log it** in `wiki/log.md`.
 
 ## Rules
 
