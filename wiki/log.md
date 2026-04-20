@@ -1,12 +1,5 @@
 # Log
 
-## [2026-04-17] ingest | World Mouse — Tütüncü, Gonzalez-Franco, Patel, Gonzalez
-
-- **Source:** https://arxiv.org/html/2603.10984v1 (CHI '26)
-- **Raw:** `raw/articles/World Mouse Exploring Interactions with a Cross-Reality Cursor.md` (already in raw/ — downloaded manually from 2026-04-17 feed)
-- **Summary:** `wiki/summaries/XR - World Mouse.md`
-- **Recommend:** partial (vision + prototype paper; no user study. Worth a small entity page + cross-links to AI+XR integration for the deixis argument)
-
 ## [2026-04-10] ingest | LLM Wiki — Andrej Karpathy
 
 - **Source:** https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
@@ -192,3 +185,25 @@
 - **Summary:** `wiki/summaries/LLM - Autoresearch.md`
 - **Recommend:** partial
 - **Note:** GitHub README / research-sandbox by Karpathy. Conceptually an open-source instance of the Meta-Harness outer-loop pattern (agent edits code → runs fixed-budget experiment → logs → iterates), applied to model training rather than LLM harness. Novel moves worth distilling: `program.md` as a programmable "skill" for a research organization, 5-min fixed wall-clock budget for cross-architecture comparability, `val_bpb` as vocab-independent metric.
+
+## [2026-04-17] ingest | World Mouse — Tütüncü, Gonzalez-Franco, Patel, Gonzalez
+
+- **Source:** https://arxiv.org/html/2603.10984v1 (CHI '26)
+- **Raw:** `raw/articles/World Mouse Exploring Interactions with a Cross-Reality Cursor.md` (already in raw/ — downloaded manually from 2026-04-17 feed)
+- **Summary:** `wiki/summaries/XR - World Mouse.md`
+- **Recommend:** partial (vision + prototype paper; no user study. Worth a small entity page + cross-links to AI+XR integration for the deixis argument)
+
+## [2026-04-20] feed | App Space Warp (mobile) vs Asynchronous Space Warp (PC) — cross-compare
+
+- **Feed:** `raw/feeds/2026-04-20.md`
+- 10 candidates + 3 excluded. No existing KB entities on AppSW/ASW (only academic depth-reconstruction pair from Xiong & Peri).
+- **Top picks:** US Patent US11783533B2 (AppSW research-paper-form), Meta "Introducing ASW 2.0" blog (PTW pivot), AppSW developer docs, ASW 2.0 developer-guide blog.
+- Comparison axes noted in feed for a future comparison page.
+
+## [2026-04-20] ingest | Mob-FGSR — Yang, Zhu, Zhuge et al.
+
+- **Source:** https://mob-fgsr.github.io/ (SIGGRAPH 2024 project page — not the full PDF)
+- **Raw:** `raw/articles/Mob-FGSR Frame Generation and Super Resolution for Mobile Real-Time Rendering.md`
+- **Summary:** `wiki/summaries/Graphics - Mob-FGSR.md`
+- **Recommend:** yes
+- **Note:** raw is the project page only. Distil should fetch the linked `SIGGRAPH_Conf_Mob_FGSR.pdf` for architectural/quantitative detail. Directly complements the 2026-04-20 AppSW/ASW feed — third axis on the same mobile-frame-generation diagram.
