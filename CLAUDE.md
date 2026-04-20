@@ -66,7 +66,7 @@ ingested: none | 2026-04-10 # date when ingested
 ---
 ```
 
-LLM updates `status`, `ingested`, and refines `tags` during ingest — never touches body content.
+LLM updates `status`, `ingested`, and refines `tags` during ingest — never touches body content. Do NOT add frontmatter fields the user omitted (e.g., `date`) and do NOT rewrite `source` (e.g., appending venue info to a URL) — the user authors the raw frontmatter; ingest only fills in the fields the skill is authorized to touch.
 
 ### Feed files (`raw/feeds/*.md`)
 

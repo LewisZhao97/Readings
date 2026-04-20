@@ -17,3 +17,5 @@
 | Tütüncü, Gonzalez-Franco et al. — World Mouse | [XR - World Mouse.md](XR%20-%20World%20Mouse.md) | 2026-04-17 | partial | xr, interaction, input-devices, cursor, cross-reality |
 | Karpathy — Autoresearch | [LLM - Autoresearch.md](LLM%20-%20Autoresearch.md) | 2026-04-17 | partial | llm, ai-agents, autonomous-research, nanochat, meta-research |
 | Yang et al. — Mob-FGSR | [Graphics - Mob-FGSR.md](Graphics%20-%20Mob-FGSR.md) | 2026-04-20 | yes | mobile-rendering, frame-generation, super-resolution, motion-vectors, siggraph-2024 |
+| Ha, Ahn, Yoon — MV-Based Frame Generation | [Graphics - Motion Vector-Based Frame Generation.md](Graphics%20-%20Motion%20Vector-Based%20Frame%20Generation.md) | 2026-04-20 | yes | frame-generation, motion-vectors, deep-learning, pacific-graphics-2025 |
+| Kim, Knowles et al. — Post-Render Warp | [Graphics - Post-Render Warp.md](Graphics%20-%20Post-Render%20Warp.md) | 2026-04-20 | yes | late-warp, reprojection, cloud-gaming, latency-mitigation, user-study, nvidia |

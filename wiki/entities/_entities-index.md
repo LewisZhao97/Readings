@@ -28,4 +28,7 @@
 | XR Blocks        | [XR - XR Blocks.md](XR%20-%20XR%20Blocks.md)                             | 2       |
 | Vibe Coding XR   | [XR - Vibe Coding XR.md](XR%20-%20Vibe%20Coding%20XR.md)                 | 1       |
 | VCXR60           | [XR - VCXR60.md](XR%20-%20VCXR60.md)                                     | 1       |
+| Mob-FGSR         | [Graphics - Mob-FGSR.md](Graphics%20-%20Mob-FGSR.md)                     | 2       |
+| MV-Based Frame Generation (Ha et al.) | [Graphics - Motion Vector-Based Frame Generation.md](Graphics%20-%20Motion%20Vector-Based%20Frame%20Generation.md) | 1 |
+| Post-Render Warp (Kim et al.) | [Graphics - Post-Render Warp.md](Graphics%20-%20Post-Render%20Warp.md) | 1       |
 |                  |                                                                          |         |

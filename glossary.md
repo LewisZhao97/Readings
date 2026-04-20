@@ -14,6 +14,11 @@
 ## D
 
 - **Depth Propagation** — Reconstruction of a dense depth map from sparse anchor points via optimization with data (anchor) + smooth (neighbor) terms, weighted by color-image similarity. See [[XR - Depth Reconstruction for Space-Warp]].
+- **Disocclusion** — Pixels visible from the target frame/pose that were occluded in the source. Creates holes in any forward-warped image; must be filled by inpainting, a second-frame sample, or keyframe-MV reuse. See [[XR - Space-Warp]], [[Graphics - Frame Generation for Real-Time Rendering]].
+
+## F
+
+- **Frame Generation (FG)** — Synthesizing in-between (interpolation) or beyond (extrapolation) frames from engine-rendered keyframes to raise display framerate without proportional shading cost. Standard input contract: color + depth + motion vectors. See [[Graphics - Frame Generation for Real-Time Rendering]].
 
 ## G
 
@@ -31,10 +36,15 @@
 
 ## L
 
+- **Late-Warp (Late Input Sampling)** — Reprojecting an already-rendered frame at display time using the most recently sampled user input (mouse rotation, keyboard translation). Eliminates up to 80% of the task-performance penalty from 80 ms of cloud-gaming latency in FPS aiming. See [[Graphics - Post-Render Warp]].
+- **LUT-based Resampling** — Replacing a runtime polynomial filter (e.g., bicubic) with a precomputed lookup table of 16-tap weights indexed by sub-pixel offsets (dₓ, d_y). Offline data-driven optimization learns the weights; runtime is a fast table lookup. Used in [[Graphics - Mob-FGSR]] to match bicubic quality at lower mobile-GPU cost.
 - **LLM Wiki Pattern** — A methodology where an LLM incrementally builds and maintains a persistent wiki from ingested sources, rather than re-deriving knowledge per query via RAG. See [[Knowledge Management - LLM Powered Knowledge Management]].
 
 ## M
 
+- **Motion Splatting** — Forward-scattering per-pixel motion vectors from a keyframe to a target time, with depth-aware atomic collision resolution (foreground wins) and gap-filling via thin-object detection + mean filter. Canonical primitive of keyframe-only frame generation. See [[Graphics - Mob-FGSR]], [[Graphics - Motion Vector-Based Frame Generation]].
+- **Motion Vector (rendered)** — Per-pixel NDC-space displacement between frames produced by the rasterizer pass; exact geometric motion, not estimated. Contrast with estimated optical flow (unreliable under large motion). A stronger prior than optical flow for rendered-content frame generation — confirmed by ablation in [[Graphics - Motion Vector-Based Frame Generation]].
+- **Motion-to-Photon Latency** — Time from user input (mouse/head motion) to the corresponding pixel change on screen. Dominates player task performance in competitive games and comfort in VR. See [[Graphics - Post-Render Warp]], [[XR - Space-Warp]].
 - **Meta-Harness** — An outer-loop system that automates harness design by giving a coding-agent proposer full filesystem access to prior candidates. See [[LLM - Meta-Harness]].
 - **Multi-Head Attention** — h parallel attention heads operating in separate projected subspaces, concatenated at output. See [[Deep Learning - Attention Mechanisms]].
 - **Memex** — Vannevar Bush's 1945 concept of a personal, curated knowledge store with associative trails between documents. See [[Knowledge Management - Memex]].
@@ -49,6 +59,7 @@
 
 ## R
 
+- **Rollback (net-game)** — Server retains a history of game state so player actions can be retroactively applied against the state the player actually saw. Enables late-warped clients to remain consistent with canonical world state. See [[Graphics - Post-Render Warp]].
 - **RenderFormer** — Transformer-based neural rendering pipeline (Zeng et al. 2025) that takes a triangle mesh and produces a globally-illuminated image without per-scene training. See [[Graphics - RenderFormer]].
 - **Rendering Equation** — Kajiya 1986. $L_o(x, \omega_o) = L_e + \int_\Omega f_r\, L_i\, (\omega_i \cdot n)\, d\omega_i$. The recursive integral that classical renderers solve and that neural renderers aim to replace. See [[Graphics - Neural Rendering]].
 - **RoPE (Rotary Position Embedding)** — Encodes token position as a rotation applied to Q and K at every attention layer; the Q·K^T dot product then depends only on relative offsets. Extended by RenderFormer to 3D vertex coordinates for scene geometry. See [[Deep Learning - Attention Mechanisms]].

@@ -207,3 +207,27 @@
 - **Summary:** `wiki/summaries/Graphics - Mob-FGSR.md`
 - **Recommend:** yes
 - **Note:** raw is the project page only. Distil should fetch the linked `SIGGRAPH_Conf_Mob_FGSR.pdf` for architectural/quantitative detail. Directly complements the 2026-04-20 AppSW/ASW feed — third axis on the same mobile-frame-generation diagram.
+
+## [2026-04-20] ingest | Motion Vector-Based Frame Generation — Ha, Ahn, Yoon
+
+- **Source:** https://diglib.eg.org/items/5cf36ca0-f40e-47c8-84a4-71cd3750d703 (Pacific Graphics 2025)
+- **Raw:** `raw/articles/Motion Vector-Based Frame Generation for Real-Time Rendering.md`
+- **Summary:** `wiki/summaries/Graphics - Motion Vector-Based Frame Generation.md`
+- **Recommend:** yes
+- **Note:** Deep-learning frame interpolation that reuses Mob-FGSR's splat-MV front end and swaps the heuristic back end for a learned motion-context encoder + combined pyramid decoder. Head-to-head on a custom UE4 dataset beats Mob-FGSR by +2.39 PSNR and AMT-G by +3.13 PSNR; 24 ms/1080p on an A6000.
+
+## [2026-04-20] ingest | Post-Render Warp with Late Input Sampling — Kim, Knowles, Spjut, Boudaoud, McGuire
+
+- **Source:** https://dl.acm.org/doi/10.1145/3406187 (NVIDIA, PACMCGIT / HPG 2020)
+- **Raw:** `raw/articles/Post-Render Warp with Late Input Sampling Improves Aiming Under High Latency Conditions.md`
+- **Summary:** `wiki/summaries/Graphics - Post-Render Warp.md`
+- **Recommend:** yes
+- **Note:** Controlled HCI study (6,750 trials) showing late-warp eliminates up to 80% of the 80 ms cloud-gaming latency penalty for FPS aiming. Adapts ASW 2.0 / TimeWarp from VR comfort to cloud-gaming performance. Three "weak effect" findings: artifact quality, translation-warp, and (to a lesser extent) game-state rollback each contribute much less than rotation late-warp.
+
+## [2026-04-20] distil | Mob-FGSR + MV-Based Frame Generation + Post-Render Warp
+
+- **Sources processed:** `Graphics - Mob-FGSR` summary (distil_times 0→1), `Graphics - Motion Vector-Based Frame Generation` summary (0→1), `Graphics - Post-Render Warp` summary (0→1).
+- **New entity pages:** `Graphics - Mob-FGSR`, `Graphics - Motion Vector-Based Frame Generation`, `Graphics - Post-Render Warp`.
+- **New topic page:** `Graphics - Frame Generation for Real-Time Rendering` — synthesises the neural/classical axis and the keyframe-only vs target-G-buffer axis; unifies FG with the Space-Warp reprojection family.
+- **Updated:** `XR - Space-Warp` gains third source (Post-Render Warp), a "Non-XR Application: Cloud Gaming" section, and cross-links to the new FG topic. Glossary adds Disocclusion, Frame Generation, Late-Warp, LUT-based Resampling, Motion Splatting, Motion Vector (rendered), Motion-to-Photon Latency, Rollback. Sub-indexes and `_wiki-index.md` stats refreshed.
+- **Follow-ups:** AppSW / ASW cross-compare from the 2026-04-20 feed still pending (would slot neatly as a fifth source into `XR - Space-Warp` and as a comparison page under the new FG topic). Mob-FGSR's raw is still project-page only — fetching the full PDF could strengthen the Mob-FGSR entity's architecture section on second distil.

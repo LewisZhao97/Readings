@@ -10,8 +10,7 @@ author:
   - "Huihui Xu"
   - "Ling-Qi Yan"
   - "Xiaogang Jin"
-source: "https://mob-fgsr.github.io/ (SIGGRAPH 2024)"
-date: 2024
+source: https://mob-fgsr.github.io/
 created: 2026-04-20
 tags:
   - mobile-rendering

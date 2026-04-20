@@ -3,9 +3,16 @@ title: "Space-Warp"
 sources:
   - "[[raw/articles/Space Warp with Depth Propagation in XR Applications]]"
   - "[[raw/articles/Image Guided Depth Super-Resolution for Spacewarp in XR Applications]]"
-tags: [xr, space-warp, reprojection, hmd, remote-rendering]
+  - "[[raw/articles/Post-Render Warp with Late Input Sampling Improves Aiming Under High Latency Conditions]]"
+tags:
+  - xr
+  - space-warp
+  - reprojection
+  - hmd
+  - remote-rendering
+  - cloud-gaming
 created: 2026-04-14
-updated: 2026-04-18
+updated: 2026-04-20
 type: entity
 ---
 
@@ -73,6 +80,22 @@ Space-Warp is **forward scatter**: each source-frame pixel is dispatched to its 
 - McMillan, L., & Bishop, G. (1995). *Plenoptic Modeling: An Image-Based Rendering System*. SIGGRAPH '95. — occlusion-compatible scan order.
 - Xiong & Peri, *Space Warp with Depth Propagation in XR Applications* — feature-based sparse depth + propagation to feed Space-Warp in split rendering.
 - Peri & Xiong, *Image Guided Depth Super-Resolution for Spacewarp in XR Applications* — joint bilateral super-resolution for the same purpose.
+
+## Non-XR Application: Cloud Gaming
+
+Kim, Knowles, Spjut, Boudaoud & McGuire (NVIDIA, HPG 2020) — *Post-Render Warp with Late Input Sampling* — explicitly adopted VR reprojection techniques (TimeWarp, ASW 2.0) for cloud-gaming first-person-shooter aiming. Their controlled user study (6,750 trials) found post-render warp eliminates up to **80% of the task-performance penalty from 80 ms of added latency**, with three surprising corollaries:
+
+1. Image-quality artifacts (e.g., visible black guardband in a naive rotation-only warp) barely hurt aiming performance.
+2. Warping **translation** (not just rotation) barely adds value — rotation is the dominant lever for mouse-driven aiming.
+3. Game-state rollback is the remaining gap between the best warp and true-local latency.
+
+Key differences from XR Space-Warp: input is mouse + keyboard (not head pose); target is competitive task performance (not comfort); network latency dominates (not display latency); rollback-aware hit detection is part of the loop and widens the cheating surface for networked play.
+
+See [[Graphics - Post-Render Warp]] for the full study.
+
+## Relationship to Frame Generation
+
+Space-Warp and mobile frame generation ([[Graphics - Mob-FGSR]], [[Graphics - Motion Vector-Based Frame Generation]]) share the depth-aware forward-splat primitive and the same input contract (color + depth + motion vectors), but differ in intent: FG interpolates between rendered frames at the same pose to raise perceived framerate, while Space-Warp extrapolates from one rendered frame to a fresher pose to reduce perceived latency. Expect these families to converge architecturally. See [[Graphics - Frame Generation for Real-Time Rendering]] for the unified picture.
 
 ### Industry / runtime
 
