@@ -12,7 +12,7 @@ A personal wiki-style knowledge base. Source materials live in `raw/` (immutable
 │   └── feeds/                   # Dated candidate lists from /feedme (YYYY-MM-DD.md)
 ├── wiki/                        # Layer 2: Distilled knowledge
 │   ├── _wiki-index.md           # Top-level delegation map — read FIRST
-│   ├── log.md                   # Chronological append-only log
+│   ├── log.md                   # Reverse-chronological log (newest on top)
 │   ├── summaries/               # 1:1 per ingested source
 │   ├── entities/                # People, tools, models, concepts (accumulates across sources)
 │   ├── topics/                  # Broad concept areas synthesized across sources
@@ -155,5 +155,5 @@ Each skill's details live in its own `SKILL.md`.
 - Each article self-contained but cross-referenced.
 - Entity pages **accumulate** across sources — never overwrite.
 - Keep indexes in sync after every distil.
-- `log.md` is append-only; entries use `## [YYYY-MM-DD] <operation> | <title>`.
+- `log.md` is reverse-chronological: **prepend** new entries at the top (right after the `# Log` heading), newest first. Entries use `## [YYYY-MM-DD] <operation> | <title>`. Never rewrite or delete past entries.
 - Bump `updated:` in frontmatter when modifying a wiki page.
