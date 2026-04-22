@@ -51,6 +51,12 @@ A jump set is a hard object to discretize directly: meshing it requires knowing 
 
 The closely related **Modica–Mortola** functional uses a double-well potential and approximates a *two-phase* segmentation (like indoor/outdoor of a surface) — used by PHASE (Lipman 2021) for occupancy-style implicit representation. AT, by contrast, models a single field with a *thin discontinuity set*, which is what the medial-axis problem requires.
 
+## Not quite the standard AT application
+
+Classical AT in Mumford–Shah segments *image intensity*: the fidelity term $(\phi - \text{noisy input})^2$ + a Dirichlet term $\int(1-v)^2\|\nabla \phi\|^2$ whose jump set sits where the image has intensity discontinuities. [[Graphics - Medial Axis Aware SDF Learning]] replaces this with the SDF's second-order structural identity $D^2\phi\,\nabla\phi$: the gated term measures *gradient* discontinuity, not intensity discontinuity. Same topology (a phase field localises on a $(d-1)$-set), different geometric object being detected. This repurposing is what makes it the neural SDF contribution — not new AT theory, but a new target for an old tool.
+
+The theoretical status is also weaker here than in classical Mumford–Shah: for image segmentation the full $\Gamma$-convergence was proved by Ambrosio–Tortorelli (1992); for the gradient-jump-set variant only the recovery sequence and existence of minimizers are established, matching the broader open $\Gamma$-limit problem for [[Math - Eikonal Equation|Aviles–Giga functionals]] in higher dimension.
+
 ## Related
 
 - [[Math - Eikonal Equation]] — whose viscosity solutions have the jump set AT is being asked to model.

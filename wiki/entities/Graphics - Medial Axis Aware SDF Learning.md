@@ -31,6 +31,8 @@ $$
 \mathcal{L}_\text{total}^\varepsilon[\phi,v] = \gamma_\text{HO}\mathcal{L}_\text{HO}^\varepsilon + \gamma_\text{AT}\mathcal{L}_\text{AT}^\varepsilon[v] + \gamma_\text{recon}\mathcal{L}_\text{recon}^\varepsilon[\phi] + \gamma_\text{eik}\mathcal{L}_\text{eik}^\varepsilon[\phi] + \gamma_\text{exp}\mathcal{L}_\text{exp}[\phi]
 $$
 
+The HO+AT pairing is the neural realization of a functional proposed by **Aviles and Giga (1987)** in the context of smectic liquid crystals: a Modica–Mortola-type energy with higher-order derivatives whose sharp-interface limit depends on the jump set of the gradient of an a.e. eikonal solution. The full $\Gamma$-convergence theory is only partially resolved — Ambrosio–De Lellis–Mantegazza (1999) in 2D, Jin–Kohn (2000) for the lower bound, De Lellis (2002) showing higher-dimensional behavior differs — which is why this paper's theorem stops at existence and a recovery sequence, without a matching $\liminf$.
+
 | Term | Form | Purpose |
 |------|------|---------|
 | $\mathcal{L}_\text{eik}^\varepsilon$ | $\tfrac{1}{\varepsilon}\int(\|\nabla\phi\|^2-1)^2$ | Eikonal fidelity |
@@ -38,6 +40,10 @@ $$
 | $\mathcal{L}_\text{AT}^\varepsilon$ | $\int \varepsilon\|\nabla v\|^2 + \tfrac{1}{4\varepsilon}(v-1)^2$ | $(d-1)$-Hausdorff measure of the jump set |
 | $\mathcal{L}_\text{recon}^\varepsilon$ | $\tfrac{1}{\varepsilon^2}\int_\mathcal{S}\phi^2$ | Surface anchoring on the input point cloud |
 | $\mathcal{L}_\text{exp}$ | $\sum_p\int e^{-\alpha_p|\phi|^p}$ | Bias toward viscosity (maximal $|\phi|$); $\alpha=(100,100,10)$ |
+
+**Why $\mathcal{L}_\text{exp}$ is not redundant with AT.** Figure 4 gives an a.e. eikonal solution whose jump set is *shorter* than the viscosity solution's. So minimizing $\mathcal{H}^{d-1}(J_{\nabla\phi})$ alone can pick a non-viscosity solution. The exponential penalty breaks the tie by preferring maximal $|\phi|$. There is no proof that the combination selects viscosity — only empirical evidence.
+
+**Signed-ness is free.** No inside/outside segmentation or oriented normals are required. If the optimizer slid to the *unsigned* distance, its gradient would jump on $\mathcal{S}$ itself (a $(d-1)$-set), inflating $\mathcal{H}^{d-1}(J_{\nabla\phi})$; AT penalizes exactly this, so the signed solution is energetically favoured (up to a global sign).
 
 ## Networks
 
@@ -80,9 +86,23 @@ Monte Carlo quadrature with local grid refinement: cells where $|\phi_\theta|<2^
 
 Decisive lead on global SDF accuracy ($E_\text{eik}^\Omega$, $E_\text{SDF}^\mathcal{N}$), tied for best on near-field surface reconstruction ($d_C$, $E_n$), at competitive runtime — despite using two networks and second derivatives. ~85³ DoF total (vs GSD's 128³).
 
-**Thingi10k (40 shapes):** Best on $E_\text{eik}^\Omega$, $E_\text{eik}^\mathcal{N}$, $E_\text{SDF}^\Omega$; 1-Lip and HeatSDF failed to converge on several shapes.
+**Thingi10k (40 shapes, 20 random + 20 tagged `sculpture`/`scan`):**
+
+| Method | $d_C$ | $d_H$ | $E_n$ | $E_\text{eik}^\Omega$ | $E_\text{eik}^\mathcal{N}$ | $E_\text{SDF}^\Omega$ | $E_\text{SDF}^\mathcal{N}$ |
+|--------|-------|-------|-------|-----------------------|-----------------------------|-----------------------|-----------------------------|
+| 1-Lip† | 0.0536 | 0.1576 | 0.1413 | 0.0728 | 0.1109 | 0.8607 | 0.1109 |
+| HeatSDF† | 0.0448 | 0.1689 | 0.0893 | 0.2136 | 0.1588 | 0.3215 | 0.0172 |
+| Hessian | **0.0110** | **0.0472** | 0.0753 | 0.7615 | 0.8185 | 0.4841 | 0.0318 |
+| HotSpot | 0.0130 | 0.0566 | 0.0818 | 0.1069 | 0.2143 | 0.4266 | 0.0671 |
+| **Ours** | 0.0124 | 0.0847 | **0.0741** | **0.0769** | **0.0189** | **0.0253** | 0.0871 |
+
+† 1-Lip and HeatSDF failed to converge on some shapes and were excluded from their averages on those — the reported numbers flatter the two methods. Ours is the only method reporting on the full 40.
+
+Dominates all four distance-fidelity metrics by a wide margin (e.g. $E_\text{eik}^\Omega$: ours 0.077 vs next-best 0.107; $E_\text{SDF}^\Omega$: 0.025 vs next-best 0.32). Second on Chamfer/Hausdorff behind Hessian, whose global SDF error is catastrophic. This is the robustness story — competitors that win near-field metrics either collapse on global metrics or fail outright on harder topology.
 
 **Sphere tracing:** Demonstrated on torus and hand shapes — fewer iterations per pixel than Hessian/HotSpot at similar visual quality, the direct payoff of accurate far-field SDF.
+
+**Ablation (§5.2.3):** The eikonal + HO combination *without* the phase field fails to recover high-quality SDFs. The phase field is load-bearing, not cosmetic — without it, the HO term collides with the unavoidable Hessian singularity on the medial axis and corrupts the global solution.
 
 ## Limitations
 

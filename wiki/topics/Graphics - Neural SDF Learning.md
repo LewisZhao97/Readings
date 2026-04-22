@@ -60,6 +60,21 @@ Trend: methods have moved from purely first-order (SIREN, eikonal-only) to secon
 - **Twin networks:** Medial-Axis-Aware uses a separate ResNet for the phase field $v_\eta$. PHASE uses one network for occupancy. Most methods use a single SDF network.
 - **Sampling:** uniform Monte Carlo → adaptive refinement near the surface and (in the medial-axis-aware case) near the predicted jump set, with importance weights $(2^{id}n)^{-1}h^d$.
 
+## Robustness: the Thingi10k signal
+
+The SRB benchmark is 5 clean shapes — all mature methods score respectably. The more interesting dataset in [[Graphics - Medial Axis Aware SDF Learning]] is **40 Thingi10k shapes** (20 random + 20 tagged `sculpture`/`scan`, including thin structures, flat regions, high curvature). Results there reveal failure modes obscured on SRB:
+
+- **1-Lip and HeatSDF** failed to converge on several shapes and were silently excluded from their reported averages — the numbers overstate how universally they apply.
+- **Hessian** wins Chamfer ($d_C=0.0110$) but its $E_\text{eik}^\Omega=0.76$ means the SDF is essentially useless off the surface.
+- **HotSpot** is the most balanced baseline on SRB; on Thingi10k its global metrics degrade by ~3× vs. its SRB numbers.
+- **Medial-Axis-Aware** places 2nd–3rd on near-field surface metrics but dominates all four distance-fidelity metrics by wide margins.
+
+The takeaway: near-field surface reconstruction is a much easier problem than globally accurate SDF. Methods that only optimize the former tend to silently fail on the latter — and this fails silently when the evaluation set doesn't include far-field metrics.
+
+## Gating as a design pattern
+
+The medial-axis-aware method introduces a pattern worth naming: **train a second network whose job is to mask where the geometric regularizer is allowed to fire.** The key move is ceding the hand-crafted "near-field band" (used in Hessian, Neural-Singular-Hessian) to a learned, geometry-adapted mask. This is more general than SDFs — any setting where a physically correct loss must be switched off on a lower-dimensional locus is a candidate. Ablation (§5.2.3) shows it's load-bearing: HO + eikonal without the phase field produces corrupted global SDFs.
+
 ## Open problems flagged by the source
 
 - **Co-dimension-2 medial-axis components** are invisible to AT (which approximates $(d-1)$-measure). Axial-symmetric shapes get artifacts.

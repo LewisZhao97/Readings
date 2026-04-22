@@ -1,6 +1,16 @@
 # Log
 
-## [2026-04-22] distil | Medial Axis Aware Learning of SDF
+## [2026-04-22] distil | Medial Axis Aware Learning of SDF — 2nd pass
+
+- **Source re-processed:** `Graphics - Medial Axis Aware SDF Learning` summary (distil_times 1→2).
+- **Refinements added** from closer reading of the raw:
+  - **Entity page:** Aviles–Giga 1987 theoretical lineage for the HO+AT pairing; the Figure 4 observation that AT's jump-set measure alone does *not* select the viscosity solution (so $\mathcal{L}_\text{exp}$ isn't redundant); the "signed-ness is free" argument (unsigned distance would add an extra $(d-1)$ jump on $\mathcal{S}$, penalized by AT); full Thingi10k table with robustness commentary (1-Lip & HeatSDF exclude non-converging shapes from their averages); explicit ablation (HO + eikonal without phase field fails).
+  - **Eikonal entity:** Aviles–Giga historical section naming Ambrosio–De Lellis–Mantegazza (1999), Jin–Kohn (2000), De Lellis (2002) as the reason higher-dim $\Gamma$-convergence remains open.
+  - **AT entity:** clarified this is a non-standard AT target — gradient jump set, not image intensity — with a correspondingly weaker theoretical status.
+  - **Neural SDF Learning topic:** new "Robustness: the Thingi10k signal" section exposing failure modes hidden on SRB; new "Gating as a design pattern" section naming the transferable move (second network as a learned mask for geometric regularizer activation).
+- **No new pages created, no glossary changes needed.** Coverage remained correct; only depth/nuance was added.
+
+
 
 - **Source processed:** `Graphics - Medial Axis Aware SDF Learning` summary (distil_times 0→1).
 - **New entity pages:** `Graphics - Medial Axis Aware SDF Learning` (the method), `Graphics - Medial Axis` (geometric concept), `Math - Eikonal Equation` (PDE + viscosity solutions), `Math - Ambrosio-Tortorelli Phase Field` (the AT regularizer trick).

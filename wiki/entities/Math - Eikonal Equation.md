@@ -24,7 +24,7 @@ There are infinitely many a.e. solutions for a given $\mathcal{S}$ — any funct
 
 ### Viscosity solution
 
-The viscosity solution is the unique weak solution selected by a comparison principle. It coincides with the **signed distance function** $\mathrm{sgndist}(\cdot,\mathcal{S})$ and is *maximal* in absolute value among all a.e. solutions vanishing on $\mathcal{S}$. This maximality is what neural-SDF methods exploit when they add an exponential penalty $\sum_p\int\exp(-\alpha_p|\phi|^p)$ — it biases the optimizer toward the largest-magnitude solution. The bias is empirical; no proof yet links the penalty to viscosity selection.
+The viscosity solution is the unique weak solution selected by a comparison principle. It coincides with the **signed distance function** $\mathrm{sgndist}(\cdot,\mathcal{S})$ and is *maximal* in absolute value among all a.e. solutions vanishing on $\mathcal{S}$. This maximality is what neural-SDF methods exploit when they add an exponential penalty $\sum_p\int\exp(-\alpha_p|\phi|^p)$ — it biases the optimizer toward the largest-magnitude solution. The bias is empirical; no proof yet links the penalty to viscosity selection. Note that minimising $\mathcal{H}^{d-1}(J_{\nabla\phi})$ alone does *not* uniquely select the viscosity solution either — [[Graphics - Medial Axis Aware SDF Learning]] Fig. 4 exhibits an a.e. eikonal solution with shorter jump-set measure than the viscosity solution.
 
 ### Linear growth in normal direction
 
@@ -37,6 +37,10 @@ wherever $\phi$ is twice differentiable. Geometrically: $\nabla\phi$ is constant
 ### Gradient jump set
 
 Lipschitz a.e. solutions of the eikonal equation generically have a discontinuous gradient on a $(d-1)$-dimensional set $J_{\nabla\phi}$. For the viscosity solution this set is the **medial axis** of $\mathcal{S}$.
+
+## Theoretical lineage — Aviles–Giga
+
+Aviles and Giga (1987, *A mathematical problem related to the physical theory of liquid crystal configurations*) proposed a Modica–Mortola-type functional with *higher-order derivatives* and conjectured that its sharp-interface limit is a functional depending on the jump set of the gradient of an a.e. eikonal solution. This is exactly the object that [[Graphics - Medial Axis Aware SDF Learning]] targets through its HO + [[Math - Ambrosio-Tortorelli Phase Field|AT]] loss. In 2D, the limit space was identified by Ambrosio–De Lellis–Mantegazza (1999); the sharp lower bound by Jin–Kohn (2000); Aviles–Giga (1996) drew the connection to viscosity solutions. De Lellis (2002) showed higher-dimensional behavior differs fundamentally — the reason the 3D $\Gamma$-convergence is still open and why neural methods in this space only prove existence + recovery, not the full $\liminf$ inequality.
 
 ## Why it's hard for neural networks
 
