@@ -1,5 +1,29 @@
 # Log
 
+## [2026-04-22] distil | Medial Axis Aware Learning of SDF
+
+- **Source processed:** `Graphics - Medial Axis Aware SDF Learning` summary (distil_times 0→1).
+- **New entity pages:** `Graphics - Medial Axis Aware SDF Learning` (the method), `Graphics - Medial Axis` (geometric concept), `Math - Eikonal Equation` (PDE + viscosity solutions), `Math - Ambrosio-Tortorelli Phase Field` (the AT regularizer trick).
+- **New topic page:** `Graphics - Neural SDF Learning` — surveys the SIREN / DiGS / PHASE / Neural-Singular-Hessian / StEik / Hessian / HotSpot / HeatSDF / 1-Lip / GSD lineage and the surface-vs-distance fidelity tension this paper resolves.
+- **Glossary:** added Ambrosio–Tortorelli Phase Field, Chamfer Distance, Eikonal Equation, Medial Axis, Viscosity Solution; broadened SDF entry beyond ray-marching context with cross-links to the new topic.
+- **Updated:** entities/topics sub-indexes, `_wiki-index.md` page count (36→41).
+- **Note:** Method is a clean cross-disciplinary import — the Ambrosio–Tortorelli phase-field trick from Mumford–Shah image segmentation, repurposed as a *learned mask* for higher-order SDF regularizers. The plug-in HeatSDF augmentation experiment suggests the HO+AT loss is a generic add-on for other neural SDF pipelines.
+
+## [2026-04-22] ingest | Medial Axis Aware Learning of SDF — Weidemaier, Norden-Smoch, Rumpf
+
+- **Source:** https://arxiv.org/html/2604.16512v1 (U. Bonn, Institute for Numerical Simulation)
+- **Raw:** `raw/articles/Medial Axis Aware Learning of Signed Distance Functions.md`
+- **Summary:** `wiki/summaries/Graphics - Medial Axis Aware SDF Learning.md`
+- **Recommend:** yes
+- **Note:** Joint neural SDF + phase-field method using an Ambrosio–Tortorelli loss to mask the second-order normal-direction regularizer on the medial axis. Best-in-class global SDF accuracy on SRB ($E_\text{eik}^\Omega=0.0106$, $E_\text{SDF}^\mathcal{N}=0.0103$), competitive Chamfer/Hausdorff, ~11 min/shape on A100. HeatSDF-augmentation experiment shows the HO+AT regularizer is a drop-in module for other neural SDF pipelines.
+
+## [2026-04-22] feed | arxiv cs.GR announced 2026-04-21
+
+- **Feed:** `raw/feeds/2026-04-22.md`
+- Source allowlist: `arxiv.org`. 11 papers announced on Tue 2026-04-21 in cs.GR; 10 ranked, 1 excluded (Gauss-Legendre, math.NA primary, low-relevance).
+- **Top picks:** ViPS (video-diffusion priors → universal 3D pose space), Instant Colorization of Gaussian Splats (closed-form 2D→3D for splats, order-of-magnitude faster), Asset Harvester (NVIDIA end-to-end image-to-3D for AV simulation).
+- Other candidates span NeRF pose uncertainty, real-time avatar IK (650 FPS CPU), LLM Manim code-gen with SFT+GRPO, medial-axis-aware SDF learning, upper-body EHPS for AR/VR, exemplar inscription restoration, unsupervised point-cloud denoising eval.
+
 ## [2026-04-21] feed | real-time rendering (games/XR)
 
 - **Query:** Fetch latest papers. No specific topic, anything about real-time rendering, in games or xr.

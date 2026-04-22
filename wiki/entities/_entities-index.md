@@ -31,4 +31,8 @@
 | Mob-FGSR         | [Graphics - Mob-FGSR.md](Graphics%20-%20Mob-FGSR.md)                     | 2       |
 | MV-Based Frame Generation (Ha et al.) | [Graphics - Motion Vector-Based Frame Generation.md](Graphics%20-%20Motion%20Vector-Based%20Frame%20Generation.md) | 1 |
 | Post-Render Warp (Kim et al.) | [Graphics - Post-Render Warp.md](Graphics%20-%20Post-Render%20Warp.md) | 1       |
+| Medial Axis Aware SDF Learning | [Graphics - Medial Axis Aware SDF Learning.md](Graphics%20-%20Medial%20Axis%20Aware%20SDF%20Learning.md) | 1       |
+| Medial Axis      | [Graphics - Medial Axis.md](Graphics%20-%20Medial%20Axis.md)             | 1       |
+| Eikonal Equation | [Math - Eikonal Equation.md](Math%20-%20Eikonal%20Equation.md)           | 1       |
+| Ambrosio–Tortorelli Phase Field | [Math - Ambrosio-Tortorelli Phase Field.md](Math%20-%20Ambrosio-Tortorelli%20Phase%20Field.md) | 1       |
 |                  |                                                                          |         |

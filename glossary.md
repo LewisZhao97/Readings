@@ -4,6 +4,7 @@
 
 ## A
 
+- **Ambrosio–Tortorelli Phase Field** — Variational technique that approximates the $(d-1)$-Hausdorff measure of a discontinuity set by a smooth field $v\in[0,1]$ collapsing to $0$ in an $\varepsilon$-band around it. Energy $\int\varepsilon\|\nabla v\|^2 + \tfrac{1}{4\varepsilon}(v-1)^2$. From Mumford–Shah image segmentation; reused for [[Graphics - Medial Axis|medial-axis]] modelling. See [[Math - Ambrosio-Tortorelli Phase Field]].
 - **Attention (Scaled Dot-Product)** — `softmax(QK^T / sqrt(d_k))V`. The core primitive of the [[Deep Learning - Transformer|Transformer]]. See [[Deep Learning - Attention Mechanisms]].
 
 ## B
@@ -13,8 +14,13 @@
 
 ## D
 
+- **Chamfer Distance ($d_C$)** — Symmetric average nearest-point distance between two point clouds: $\tfrac{1}{|\mathcal{P}|}\sum_x \min_y\|x-y\| + \tfrac{1}{|\hat{\mathcal{P}}|}\sum_y \min_x\|x-y\|$. Standard surface-reconstruction metric. See [[Graphics - Neural SDF Learning]].
 - **Depth Propagation** — Reconstruction of a dense depth map from sparse anchor points via optimization with data (anchor) + smooth (neighbor) terms, weighted by color-image similarity. See [[XR - Depth Reconstruction for Space-Warp]].
 - **Disocclusion** — Pixels visible from the target frame/pose that were occluded in the source. Creates holes in any forward-warped image; must be filled by inpainting, a second-frame sample, or keyframe-MV reuse. See [[XR - Space-Warp]], [[Graphics - Frame Generation for Real-Time Rendering]].
+
+## E
+
+- **Eikonal Equation** — First-order Hamilton–Jacobi PDE $\|\nabla\phi\|=1$ a.e., with $\phi=0$ on a surface. Has many a.e. solutions; the unique [[Math - Eikonal Equation|viscosity solution]] is the signed distance function. The structural identity $D^2\phi\,\nabla\phi=0$ encodes its linear growth in the normal direction. See [[Math - Eikonal Equation]].
 
 ## F
 
@@ -42,6 +48,7 @@
 
 ## M
 
+- **Medial Axis** — Closure of the set of points where the nearest-point projection onto a surface is multi-valued; equivalently, the gradient jump set $J_{\nabla\phi}$ of the [[Math - Eikonal Equation|signed distance function]]. Lower-dimensional skeleton; intrinsic singularity that any global SDF regularizer must accommodate. See [[Graphics - Medial Axis]].
 - **Motion Splatting** — Forward-scattering per-pixel motion vectors from a keyframe to a target time, with depth-aware atomic collision resolution (foreground wins) and gap-filling via thin-object detection + mean filter. Canonical primitive of keyframe-only frame generation. See [[Graphics - Mob-FGSR]], [[Graphics - Motion Vector-Based Frame Generation]].
 - **Motion Vector (rendered)** — Per-pixel NDC-space displacement between frames produced by the rasterizer pass; exact geometric motion, not estimated. Contrast with estimated optical flow (unreliable under large motion). A stronger prior than optical flow for rendered-content frame generation — confirmed by ablation in [[Graphics - Motion Vector-Based Frame Generation]].
 - **Motion-to-Photon Latency** — Time from user input (mouse/head motion) to the corresponding pixel change on screen. Dominates player task performance in competitive games and comfort in VR. See [[Graphics - Post-Render Warp]], [[XR - Space-Warp]].
@@ -78,7 +85,7 @@
 ## S
 
 - **Space-Warp** — Depth-based late-stage reprojection of a rendered frame to a fresher head pose, used in XR to hide rendering latency. See [[XR - Space-Warp]].
-- **SDF (Signed Distance Function)** — A mathematical function that returns the signed distance from a point to the nearest surface. Negative = inside, zero = on surface, positive = outside. Used in ray marching. See [[Graphics - Ray Marching]].
+- **SDF (Signed Distance Function)** — Function returning the signed distance from a point to the nearest surface (negative inside, zero on surface, positive outside). The unique viscosity solution of the [[Math - Eikonal Equation|eikonal equation]]; the gradient is discontinuous on the [[Graphics - Medial Axis|medial axis]]. Consumed by sphere tracing ([[Graphics - Ray Marching]]); learned by neural methods ([[Graphics - Neural SDF Learning]]).
 - **Self-Attention** — Attention where queries, keys, and values all come from the same sequence — each position attends over every other. See [[Deep Learning - Attention Mechanisms]].
 - **Sphere Tracing** — A ray marching optimization where the step size equals the SDF value at each point, guaranteeing no overshoot. See [[Graphics - Ray Marching]].
 
@@ -88,6 +95,7 @@
 
 ## V
 
+- **Viscosity Solution** — The unique weak solution of a Hamilton–Jacobi PDE selected by a comparison principle. For the eikonal equation it equals the signed distance function and is *maximal* in absolute value among all a.e. solutions. Neural-SDF methods bias toward it via exponential growth penalties $\sum_p\int e^{-\alpha_p|\phi|^p}$. See [[Math - Eikonal Equation]].
 - **VCXR60** — 60-prompt pilot benchmark for intent-driven XR code generation, introduced by [[XR - Vibe Coding XR]]. Pass@1 = zero runtime errors in a headless Chromium browser. See [[XR - VCXR60]].
 - **Vibe Coding** — Intent-driven creation paradigm: a user expresses a high-level natural-language goal and a tool (e.g., Gemini Canvas, Cursor) generates a working application. In XR, the prompt compiles into a Script orchestrating perception, AI, and UI modules. See [[XR - Vibe Coding XR]], [[XR - XR Blocks]], [[XR - AI + XR Integration]].
 

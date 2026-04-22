@@ -13,3 +13,4 @@
 | AI + XR Integration | [XR - AI + XR Integration.md](XR%20-%20AI%20%2B%20XR%20Integration.md) | 2 |
 | LLM Code Generation Benchmarks | [LLM - Code Generation Benchmarks.md](LLM%20-%20Code%20Generation%20Benchmarks.md) | 1 |
 | Frame Generation for Real-Time Rendering | [Graphics - Frame Generation for Real-Time Rendering.md](Graphics%20-%20Frame%20Generation%20for%20Real-Time%20Rendering.md) | 2 |
+| Neural SDF Learning | [Graphics - Neural SDF Learning.md](Graphics%20-%20Neural%20SDF%20Learning.md) | 1 |
