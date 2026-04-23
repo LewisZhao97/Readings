@@ -14,6 +14,11 @@
 | **Comparisons** | [comparisons/_comparisons-index.md](comparisons/_comparisons-index.md) | X vs Y analysis | "How does X compare to Y?" |
 | **Synthesis** | [synthesis/_synthesis-index.md](synthesis/_synthesis-index.md) | High-level cross-cutting analysis across many topics | "What's the big picture on X?" |
 
+## Reference
+
+- [xr-venues.md](xr-venues.md) — Curated top conferences, journals, industry labs, and courses for XR development and adjacent fields (Graphics, HCI, AI/ML/CV/LLM, Games, Chinese research ecosystem). Human browsing reference.
+- [../glossary.md](../glossary.md) — Cross-cutting term definitions.
+
 ## Stats
 
 - **Total sources ingested:** 15

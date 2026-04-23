@@ -17,7 +17,8 @@ A personal wiki-style knowledge base. Source materials live in `raw/` (immutable
 │   ├── entities/                # People, tools, models, concepts (accumulates across sources)
 │   ├── topics/                  # Broad concept areas synthesized across sources
 │   ├── comparisons/             # X vs Y
-│   └── synthesis/               # Rare cross-cutting analysis
+│   ├── synthesis/               # Rare cross-cutting analysis
+│   └── xr-venues.md             # Curated conferences/labs/courses reference (human browsing)
 └── glossary.md                  # Cross-cutting term definitions
 ```
 
