@@ -1,6 +1,18 @@
+---
+title: "ASW Mock — Sources & Evidence"
+date: 2026-04-18
+type: note
+tags:
+  - graphics
+  - xr
+  - asw
+  - space-warp
+  - unity
+  - urp
+---
 # ASW Mock — Sources & Evidence
 
-Follow-up to [`ASW_Mock_TechSharing.md`](ASW_Mock_TechSharing.md). Captures the two questions raised during review of the mock:
+Follow-up to [[ASW Mock TechSharing.md]]. Captures the two questions raised during review of the mock:
 
 1. Where does the **two-renderer swap** pattern come from — any paper or authoritative source?
 2. Where does **forward reprojection (scatter + resolve)** come from — proof that ASW should be built this way?

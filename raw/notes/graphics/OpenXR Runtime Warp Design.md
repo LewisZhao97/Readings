@@ -19,7 +19,7 @@ tags:
 
 ## Context
 
-Follow-up to [`ASW_Mock_TechSharing.md`](ASW_Mock_TechSharing.md) and [`ASW_Mock_Sources_and_Evidence.md`](ASW_Mock_Sources_and_Evidence.md). The current project is implementing an OpenXR runtime on our own XR devices; ASW is one of the features alongside ATW and PTW. Three implementation-level questions surfaced while reading [[Graphics - Frame Generation for Real-Time Rendering]]:
+Follow-up to [[ASW Mock TechSharing.md]] and [[ASW Mock Sources and Evidence.md]]. The current project is implementing an OpenXR runtime on our own XR devices; ASW is one of the features alongside ATW and PTW. Three implementation-level questions surfaced while reading [[Graphics - Frame Generation for Real-Time Rendering]]:
 
 1. Does interpolation-based frame generation (DLSS 3 FG style) work for ASW/ATW/PTW?
 2. How are motion vectors generated when the previous display frame was a warp frame (no G-buffer)?

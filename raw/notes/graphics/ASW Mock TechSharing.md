@@ -1,3 +1,17 @@
+---
+title: "Mocking Application SpaceWarp (ASW) in Unity URP — Technical Deep Dive"
+date: 2026-04-16
+type: note
+tags:
+  - graphics
+  - xr
+  - asw
+  - space-warp
+  - unity
+  - urp
+  - frame-extrapolation
+  - motion-vectors
+---
 # Mocking Application SpaceWarp (ASW) in Unity URP — Technical Deep Dive
 
 A proof-of-concept that reproduces Oculus/Meta's **Application SpaceWarp (ASW)** behaviour inside a plain Unity URP project — no XR runtime, no SDK. The goal is to run the full algorithm end-to-end on desktop, validate correctness visually, and land on an implementation structure that is portable to a real XR compositor layer later.

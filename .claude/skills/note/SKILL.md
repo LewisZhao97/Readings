@@ -23,7 +23,7 @@ If the conversation spans multiple distinct topics, ask which to capture.
 ## Steps
 
 1. **Pick the field folder.** Match the field vocabulary the wiki already uses (prefixes like `LLM - ...`, `XR - ...`, `Graphics - ...`) translated to lowercase-hyphen directory names. Existing folders first; create a new one only if no existing field fits.
-2. **Name the file.** Match the style of sibling notes in the chosen folder. If the name collides, ask whether to append or rename.
+2. **Name the file.** Use spaces, not underscores (e.g. `Some Topic Name.md`, not `Some_Topic_Name.md`). Title-case is fine; descriptive over compact. If the name collides, ask whether to append or rename.
 3. **Write the note** with:
    - Lightweight frontmatter: `title`, `date`, `type: note`, `tags`.
    - **Context** — what prompted the discussion, linking to any triggering note/article/wiki page.
