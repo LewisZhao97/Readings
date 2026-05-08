@@ -35,4 +35,6 @@
 | Medial Axis      | [Graphics - Medial Axis.md](Graphics%20-%20Medial%20Axis.md)             | 1       |
 | Eikonal Equation | [Math - Eikonal Equation.md](Math%20-%20Eikonal%20Equation.md)           | 1       |
 | Ambrosio–Tortorelli Phase Field | [Math - Ambrosio-Tortorelli Phase Field.md](Math%20-%20Ambrosio-Tortorelli%20Phase%20Field.md) | 1       |
+| HOMER            | [XR - HOMER.md](XR%20-%20HOMER.md)                                       | 1       |
+| Scaled HOMER     | [XR - Scaled HOMER.md](XR%20-%20Scaled%20HOMER.md)                       | 1       |
 |                  |                                                                          |         |

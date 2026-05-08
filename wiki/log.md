@@ -1,5 +1,31 @@
 # Log
 
+## [2026-05-08] distil | Scaled HOMER (Velocity-Based Scaling for Distant 3D Manipulation)
+
+- **Source processed:** `Graphics - Scaled HOMER (Velocity-Based Scaling for Distant 3D Manipulation)` summary (distil_times 0→1).
+- **New entity pages:** `XR - HOMER` (the parent technique — Bowman 1999), `XR - Scaled HOMER` (Wilkes & Bowman 2008, this paper). HOMER warrants its own page even though only mentioned-in-passing here, because the Scaled HOMER algorithm is meaningless without its mechanics on hand.
+- **New topic page:** `XR - Distant Object Manipulation` — surveys the design space (arm scaling / world scaling / replica / ray / gaze) and the lineage Go-Go → ray-casting → HOMER → PRISM → Scaled HOMER → adaptive-gain → BMSR → gaze+pinch → SightWarp. Anchors what 2026-05-08 feed surfaced.
+- **Glossary:** added Control-Display (CD) Gain, Go-Go Interaction, HOMER, PRISM, Scaled HOMER, Velocity-Based Scaling.
+- **Updated:** entities/topics sub-indexes, `_wiki-index.md` page count (42→45).
+- **Note:** This distil is heavy on cross-source mentions (PRISM, Go-Go, BMSR, gaze+pinch, SightWarp, AVP/Quest) without those papers being ingested yet. The topic page deliberately marks them as `referenced` rather than ingested so a future ingest can promote them to full entries without restructuring.
+
+## [2026-05-08] ingest | Advantages of Velocity-Based Scaling for Distant 3D Manipulation — Wilkes, Bowman
+
+- **Source:** https://dl.acm.org/doi/10.1145/1450579.1450585 (Virginia Tech, ACM VRST 2008)
+- **Raw:** `raw/articles/Advantages of Velocity-Based Scaling for Distant 3D Manipulation.md`
+- **Summary:** `wiki/summaries/Graphics - Scaled HOMER (Velocity-Based Scaling for Distant 3D Manipulation).md`
+- **Recommend:** yes
+- **Note:** Lifts the PRISM speed-adaptive CD-gain technique into the *distant* manipulation regime by composing it with HOMER. Compositional recipe: apply velocity scaling to the physical hand → feed scaled hand position into any manipulation technique. CAVE study (n=14) shows ~2× speedup over HOMER, with the gain concentrated at far + small + long-movement targets. Direct ancestor of modern XR drag-at-distance designs (AVP z-axis telescoping, BMSR, Scaled HOMER+NFSRV).
+- **Note on feed metadata:** The 2026-05-08 feed entry #7 misattributed this paper to Frees & Kessler 2005 / VRST '05; correct citation is Wilkes & Bowman, VRST '08, DOI `10.1145/1450579.1450585`.
+
+## [2026-05-08] feed | XR pinch & drag interaction (Vision Pro / Quest)
+
+- **Query:** Most valuable research on XR pinch-and-drag interaction, especially Apple Vision Pro and Meta Quest — design of the dragging experience and manipulation of window scale/distance.
+- **Feed:** `raw/feeds/2026-05-08.md`
+- **Source allowlist:** none specified — open-web semantic search.
+- **Candidates:** 10 (all new). Two strands: gaze+pinch family (Pfeuffer lineage from SUI '17 → CG&A 2024 → SightWarp UIST '25) and distant-object manipulation with adaptive gains (PRISM TOCHI '07, IEEE VR 2024 BMSR/Scaled HOMER+NFSRV, ISMAR '22 adaptive gains, CHI '25 area cursors + CD gain).
+- **Top picks:** Pfeuffer 2024 *Design Principles for Gaze and Pinch* (the direct AVP design manual, including the CD-ratio drag issue); Babu/Hsieh/Chuang 2024 IEEE VR (scaled-replica near-field for distant objects); Frees/Kessler/Kay 2007 PRISM (the canonical speed-adaptive CD-gain algorithm).
+
 ## [2026-04-22] distil | Medial Axis Aware Learning of SDF — 2nd pass
 
 - **Source re-processed:** `Graphics - Medial Axis Aware SDF Learning` summary (distil_times 1→2).

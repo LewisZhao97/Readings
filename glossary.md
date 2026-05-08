@@ -12,6 +12,10 @@
 - **BRDF (Bidirectional Reflectance Distribution Function)** — Function $f_r(x, \omega_i, \omega_o)$ describing how much light from direction $\omega_i$ is reflected toward $\omega_o$ at surface point $x$. Core term in the Rendering Equation. See [[Graphics - Neural Rendering]].
 - **Bilateral Filter** — Edge-preserving smoothing filter weighting neighbors by spatial proximity *and* intensity similarity. Joint/cross variants use a separate guide image (e.g., color-guided depth upsampling). See [[Graphics - Bilateral Filter]].
 
+## C
+
+- **Control-Display (CD) Gain** — Ratio between physical input motion and resulting output (cursor / virtual hand / object) displacement. Constant >1 amplifies (good for reach), <1 dampens (good for precision). *Speed-adaptive* CD gain (low gain when fast, high gain when slow) is the dominant pattern in modern XR distant manipulation. See [[XR - Distant Object Manipulation]], [[XR - Scaled HOMER]].
+
 ## D
 
 - **Chamfer Distance ($d_C$)** — Symmetric average nearest-point distance between two point clouds: $\tfrac{1}{|\mathcal{P}|}\sum_x \min_y\|x-y\| + \tfrac{1}{|\hat{\mathcal{P}}|}\sum_y \min_x\|x-y\|$. Standard surface-reconstruction metric. See [[Graphics - Neural SDF Learning]].
@@ -28,12 +32,14 @@
 
 ## G
 
+- **Go-Go Interaction** — Non-linear arm-extension technique (Poupyrev 1996): physical hand displacement past a threshold maps to disproportionately larger virtual-hand displacement, letting the user reach distant objects without relocating. Amplifies jitter; no precision mechanism. See [[XR - Distant Object Manipulation]].
 - **Generative Reality** — Design paradigm in which generative AI is applied not just to conversational agents but to the fabric of XR environments: depth, lighting, agents, UI all co-synthesized against a high-level intent. Coined by [[XR - XR Blocks]]. See [[XR - AI + XR Integration]].
 - **GGX** — Microfacet normal-distribution BRDF [Walter et al. 2007], parameterized by diffuse albedo, specular albedo, and roughness. The reflectance model used by [[Graphics - RenderFormer]].
 - **Global Illumination (GI)** — Light transport accounting for *all* bounces (direct + indirect), including diffuse inter-reflection, specular inter-reflection, soft shadows, caustics. Classical solvers: path tracing, radiosity. See [[Graphics - Neural Rendering]].
 
 ## H
 
+- **HOMER (Hand-centered Object Manipulation Extending Ray-casting)** — Hybrid 3D manipulation technique (Bowman 1999): ray-cast for selection, then virtual hand at distance $D_\text{virthand} = D_\text{currhand}\cdot D_\text{object}/D_\text{hand}$ for translation/rotation. Canonical baseline for at-a-distance manipulation. See [[XR - HOMER]].
 - **Harness** — The code wrapping an LLM that determines context, memory, tool access, and scaffolding. Often a larger performance lever than the model itself. See [[LLM - Harness Engineering]].
 
 ## I
@@ -79,6 +85,7 @@
 
 ## P
 
+- **PRISM (Precise and Rapid Interaction through Scaled Manipulation)** — Velocity-adaptive CD-gain technique for VR virtual-hand manipulation (Frees, Kessler & Kay, TOCHI 2007). Slow hand → CD gain raised → instability filtered. Fast hand → CD gain falls toward 1 → unconstrained reach. Confined to arm's-reach virtual hand; the distant-manipulation extension is [[XR - Scaled HOMER]]. See [[XR - Distant Object Manipulation]].
 - **Pass@k** — Probability that at least one of `k` independently drawn samples from an LLM passes an automated oracle (typically unit tests or a runtime error check). The canonical codegen metric, introduced by HumanEval (Chen et al. 2021). See [[LLM - Code Generation Benchmarks]].
 - **Positional Encoding** — Sinusoidal (or learned) vectors added to token embeddings to inject order information into an otherwise permutation-invariant attention model. See [[Deep Learning - Attention Mechanisms]].
 
@@ -88,6 +95,7 @@
 - **SDF (Signed Distance Function)** — Function returning the signed distance from a point to the nearest surface (negative inside, zero on surface, positive outside). The unique viscosity solution of the [[Math - Eikonal Equation|eikonal equation]]; the gradient is discontinuous on the [[Graphics - Medial Axis|medial axis]]. Consumed by sphere tracing ([[Graphics - Ray Marching]]); learned by neural methods ([[Graphics - Neural SDF Learning]]).
 - **Self-Attention** — Attention where queries, keys, and values all come from the same sequence — each position attends over every other. See [[Deep Learning - Attention Mechanisms]].
 - **Sphere Tracing** — A ray marching optimization where the step size equals the SDF value at each point, guaranteeing no overshoot. See [[Graphics - Ray Marching]].
+- **Scaled HOMER** — Velocity-adaptive CD-gain extension of [[XR - HOMER|HOMER]] (Wilkes & Bowman, VRST 2008). Wraps PRISM-style speed-adaptive scaling around the physical hand input, then feeds the synthetic hand position to HOMER unchanged. ~2× speedup on CAVE precision tasks. See [[XR - Scaled HOMER]].
 
 ## T
 
@@ -95,6 +103,7 @@
 
 ## V
 
+- **Velocity-Based Scaling** — Mapping function that varies CD gain with input speed: slow → high gain (fine control), fast → low gain (rapid traversal), often with a fast-input cap (1.2× in [[XR - Scaled HOMER]]) and a tremor-floor that zeroes out micro-motion. The general pattern under PRISM, Scaled HOMER, and modern adaptive-gain XR techniques. See [[XR - Distant Object Manipulation]].
 - **Viscosity Solution** — The unique weak solution of a Hamilton–Jacobi PDE selected by a comparison principle. For the eikonal equation it equals the signed distance function and is *maximal* in absolute value among all a.e. solutions. Neural-SDF methods bias toward it via exponential growth penalties $\sum_p\int e^{-\alpha_p|\phi|^p}$. See [[Math - Eikonal Equation]].
 - **VCXR60** — 60-prompt pilot benchmark for intent-driven XR code generation, introduced by [[XR - Vibe Coding XR]]. Pass@1 = zero runtime errors in a headless Chromium browser. See [[XR - VCXR60]].
 - **Vibe Coding** — Intent-driven creation paradigm: a user expresses a high-level natural-language goal and a tool (e.g., Gemini Canvas, Cursor) generates a working application. In XR, the prompt compiles into a Script orchestrating perception, AI, and UI modules. See [[XR - Vibe Coding XR]], [[XR - XR Blocks]], [[XR - AI + XR Integration]].

@@ -21,6 +21,6 @@
 
 ## Stats
 
-- **Total sources ingested:** 15
-- **Total wiki pages:** 41
-- **Last updated:** 2026-04-22 (Medial Axis Aware SDF 2nd-pass distil)
+- **Total sources ingested:** 16
+- **Total wiki pages:** 45
+- **Last updated:** 2026-05-08 (Medial Axis Aware SDF 2nd-pass distil)
